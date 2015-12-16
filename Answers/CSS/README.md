@@ -1,6 +1,6 @@
 # CSS Questions
 
-* :sunglasses: What is the difference between classes and ID's in CSS?
+* :confused: What is the difference between classes and ID's in CSS?
 
 * :confused: What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
 
