@@ -43,7 +43,7 @@ clearfix use :after psudo-class: require CSS3 support
 > 3 - **Generating Content Through CSS (recommended)**
 
 > Another alternative is to use the CSS pseudo-class `:after` to generate content after the containing element, using it to clear floats and then hiding itself. Personally, I don’t like this approach since it generates content to the page that has nothing to do there in the first place.
-```
+```css
 .container-with-generated-content:after {
   content: ".";
   display: block;
@@ -59,61 +59,132 @@ clearfix use :after psudo-class: require CSS3 support
 
 * :sunglasses: Explain CSS sprites, and how you would implement them on a page or site.
 
-> Concatenating small images into single large image to reduce request number. Using css background to show the right portion.
+CSS Sprites is a method of combining multiple images used throughout your website into one large image (or "sprite") to reduce the total number network requests for images. Using this sprite image with the proper `background-position` CSS attributes and X, Y coordinates, it is then possible to display a particular image.
 
-* :sunglasses: What are your favourite image replacement techniques and which do you use when?
+[CSS Tricks](http://css-tricks.com/css-sprites/)
 
-> use `text-index: 100%;`
+* :sunglasses: What are your favorite image replacement techniques and which do you use when?
 
-> [Source](http://css-tricks.com/examples/ImageReplacement/#leahy)
+> [CSS Tricks](https://css-tricks.com/the-image-replacement-museum/) technique museum.
+
+> Bonus points for knowing [potential SEO risk](https://support.google.com/webmasters/answer/66353).
+
+> **2014: H5BP Image Replacement 2**
+
+> This doesn't really replace a single element with an image, it just does a good job at hiding an element from view while remaining accessible to screen readers. So you could use whatever you wanted to display the image, then put text next to it.
+```html
+<h1 class="visuallyhidden">
+  H5BP
+</h1>
+```
+```css
+h1.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+```
+
+> Hide only visually, but have it available for screen readers:
+
+> [Source](http://snook.ca/archives/html_and_css/hiding-content-for-accessibility)
+
+> **2012: Scott Kellum Method**
+
+> Positions text outside the container and hides with overflow.
+>```html
+<h1>
+  Scott Kellum Method
+</h1>
+```
+```css
+h3.skm {
+  width: 300px;
+  height: 75px;
+  background: url(path/to/image);
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+```
+
+> [Source](http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/)
 
 * :sunglasses: How would you approach fixing browser-specific styling issues?
 
-> IE specific CSS hacks
-```
+> 1 - Browser specific CSS hacks
+```css
 _color: blue /* ie6 */
 *color: blue /* ie6, ie7 */
 color: blue\9 /* ie6, ie7, ie8 */
 ```
-Conditional Stylesheets
-```
+ > 2 - Conditional stylesheets
+```html
 <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 <!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="css/ie7.css"  />< ![endif]-->
 <!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="css/ie6.css"  />< ![endif]-->
 ```
-better solution than Conditional Stylesheets
-```
+3 - Conditional comments to set classes on the html element
+```html
 <!--[if lt IE 7]>      <html class="ie6"> <![endif]-->
 <!--[if IE 7]>         <html class="ie7"> <![endif]-->
 <!--[if IE 8]>         <html class="ie8"> <![endif]-->
 <!--[if gt IE 8]><!--> <html>         <!--<![endif]-->
+```
+```css
 div.foo { color: inherit;}
 .ie6 div.foo { color: #ff8000; }
 ```
 
-* :confused: How do you serve your pages for feature-constrained browsers?
-  * :confused: What techniques/processes do you use?
+* :sunglasses: How do you serve your pages for feature-constrained browsers?
+  * :sunglasses: What techniques/processes do you use?
 
+> **Graceful Degredation** is an older, fault tolerant approach of disabling features based entirely on which browser is detected.
+
+> **Progressive Enhancement** is able to support evergreen browsers by detecting support for specific features for HTML, CSS & JavaScript. Modernizr can be used to detect many HTML5 API's and CSS3 rules. If backwards compatibility is necessary, features may be supported using polyfills such as those provided by Autoprefixer or Babel.
 
 * :sunglasses: What are the different ways to visually hide content (and make it available only for screen readers)?
 
->
-1. `position: absolute; margin-left: -10000;`
+>1. `position: absolute;  margin-left: -10000px;`
 1. `display: none;`
-1. `opacity: 0.5;`
+1. `opacity: 0.0;`
 1. `visibility: hidden;` # without changing the layout
 
 * :confused: Have you ever used a grid system, and if so, what do you prefer?
 
+> Quickly [compare](http://responsive.vermilion.com/compare.php) Bootstrap and Foundation or reference comparison [criteria and explanations](https://github.com/corysimmons/lost/wiki/Comparison-Explanation) from Lost Grid.
+
 * :confused: Have you used or implemented media queries or mobile specific layouts/CSS?
 
-* :sunglasses: Are you familiar with styling SVG?
+> [Smashing Magazine](http://mobile.smashingmagazine.com/2010/07/19/how-to-use-css3-media-queries-to-create-a-mobile-version-of-your-website/)
 
-> essentially same thing, fill for background-color
+* :confused: Are you familiar with styling SVG?
 
 * :confused: How do you optimize your webpages for print?
 
+> In the case of a print stylesheet when the page is printed this functionality is enabled in CSS2 by media types. Media Types let you specify a type of media to target, so you could target print.
+
+> Steps:
+1. Create a stylesheet for print
+1. Avoid unnecessary HTML tables
+1. Know which portions of the page don't have any print value and use `.no-print { display: none; }`
+1. Use page breaks
+1. Size size your page for print
+1. Test!
+
+> [Smashing Magazine](http://www.smashingmagazine.com/2011/11/how-to-set-up-a-print-style-sheet/)
+
 * :confused: What are some of the "gotchas" for writing efficient CSS?
+
+> * Use a CSS reset
+* Clear things up
+* Box Model
+* IE is bad but have to deal with it with tricks
 
 * :confused: What are the advantages/disadvantages of using CSS preprocessors?
   * :confused: Describe what you like and dislike about the CSS preprocessors you have used.
@@ -124,6 +195,8 @@ div.foo { color: inherit;}
 > Webfonts (font services like: Google Webfonts, Typekit etc.)
 
 * :confused: Explain how a browser determines what elements match a CSS selector.
+
+> Browsers match from the right; it gives an obvious starting point and lets you get rid of most of the candidate selectors very quickly
 
 * :confused: Describe pseudo-elements and discuss what they are used for.
 

@@ -46,7 +46,7 @@
 1. Using the right language code
 1. Font sizes
 
-* :sunglasses: What are data- attributes good for?
+* :sunglasses: What are `data-` attributes good for?
 
 > The specification for custom data attributes states that any attribute that starts with `data-` will be treated as a storage area for private data (private in the sense that the end user can’t see it – it doesn’t affect layout or presentation).
 
