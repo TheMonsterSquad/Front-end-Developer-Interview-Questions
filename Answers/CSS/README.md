@@ -59,9 +59,9 @@ clearfix use :after psudo-class: require CSS3 support
 
 * :sunglasses: Explain CSS sprites, and how you would implement them on a page or site.
 
-CSS Sprites is a method of combining multiple images used throughout your website into one large image (or "sprite") to reduce the total number network requests for images. Using this sprite image with the proper `background-position` CSS attributes and X, Y coordinates, it is then possible to display a particular image.
+> CSS Sprites is a method of combining multiple images used throughout your website into one large image (or "sprite") to reduce the total number network requests for images. Using this sprite image with the proper `background-position` CSS attributes and X, Y coordinates, it is then possible to display a particular image.
 
-[CSS Tricks](http://css-tricks.com/css-sprites/)
+> [CSS Tricks](http://css-tricks.com/css-sprites/)
 
 * :sunglasses: What are your favorite image replacement techniques and which do you use when?
 
