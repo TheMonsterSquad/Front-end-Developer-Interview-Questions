@@ -14,7 +14,7 @@
 
 > Browsers will display xml parse errors if your page contains invalid code.
 
-> However that serving your pages as application/xhtml+xml will cause Internet Explorer 8 to show a download dialog box for an unknown format instead of displaying your page, as the first version of Internet Explorer with support for XHTML is Internet Explorer 9.
+> Serving your pages as application/xhtml+xml will cause Internet Explorer 8 to show a download dialog box for an unknown format instead of displaying your page, as the first version of Internet Explorer with support for XHTML is Internet Explorer 9.
 
 > [MDN](https://developer.mozilla.org/en-US/docs/Quirks_Mode_and_Standards_Mode#XHTML)
 
