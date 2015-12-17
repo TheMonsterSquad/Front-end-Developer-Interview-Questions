@@ -20,6 +20,74 @@ even in a global context, the this variable will still refer to an object
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
 *   :confused: Explain how prototypal inheritance works
+
+In JavaScript, the inheritance is prototype-based. That means that there are
+no classes. Instead, an object inherits from another object.
+
+[Source](http://javascript.info/tutorial/inheritance)
+
+Steps to create a prototype chain:
+
+1.  Create a function `NormalHuman`
+
+```javascript
+function NormalHuman() {}
+```
+
+2.  The `Animal` function object will have a
+    `prototype` property, which is an `object` type
+
+3.  The `prototype` object will have a `constructor` property which points
+to the `NormalHuman` function
+
+4.  Create another function `SuperHuman`
+
+```javascript
+function SuperHuman() {}
+```
+
+5.  Allow the `SuperHuman` object to extend `NormalHuman` by
+setting `SuperHuman.prototype` to an instance of the `NormalHuman` object
+created using the `new` keyword
+
+```javascript
+SuperHuman.prototype = new NormalHuman();
+```
+
+This allows `SuperHuman` to have access to any properties that are set
+on `NormalHuman.prototype`:
+
+```javascript
+NormalHuman.prototype.walk = function() {
+ console.log('is walking');
+};
+
+new SuperHuman().walk(); // is walking
+```
+
+[Full Demo](http://jsbin.com/deyelopora/edit?js,console)
+
+[Source](http://www.codeproject.com/Articles/887551/Prototypal-inheritance-in-JavaScript)
+
+**Bonus Points**
+
+While this is often considered to be one of JavaScript's weaknesses, the
+prototypal inheritance model is in fact more powerful than the classic model.
+It is, for example, fairly trivial to build a classic model on top of a
+prototypal model, while the other way around is a far more difficult task.
+
+The lookup time for properties that are high up on the prototype chain can have
+a negative impact on performance, and this may be significant in code where
+performance is critical.
+
+[JavaScript Garden](https://bonsaiden.github.io/JavaScript-Garden/#object.prototype)
+
+The `prototype` will _also_ have the property `__proto__` which points
+`Object.prototype` - This `__proto__` property is used internally by
+JavaScript to traverse the "prototype chain"
+
+[Source](http://blog.vjeux.com/2011/javascript/how-prototypal-inheritance-really-works.html)
+
 *   :sunglasses: What do you think of AMD vs CommonJS?
 
 CommonJS is a project to define a common API and ecosystem for JavaScript. One
