@@ -2,15 +2,15 @@
 
 ## Topics
 
-*   [CSS](Answers/CSS)
-*   [HTML](Answers/HTML)
-*   [JavaScript](Answers/JavaScript)
-*   [Performance](Answers/Performance)
-*   [Testing](Answers/Testing)
+*   [CSS](CSS)
+*   [HTML](HTML)
+*   [JavaScript](JavaScript)
+*   [Performance](Performance)
+*   [Testing](Testing)
 
 ## Contributing
 
-Please read and follow [these guidelines](Answers/CONTRIBUTING.md).
+Please read and follow [these guidelines](CONTRIBUTING.md).
 
 ## Credits
 
