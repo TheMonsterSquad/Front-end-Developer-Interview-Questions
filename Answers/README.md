@@ -5,6 +5,7 @@
 *   [CSS](CSS)
 *   [HTML](HTML)
 *   [JavaScript](JavaScript)
+*   [Network](Network)
 *   [Performance](Performance)
 *   [Testing](Testing)
 
