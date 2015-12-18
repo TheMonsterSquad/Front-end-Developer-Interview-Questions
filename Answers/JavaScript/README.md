@@ -252,7 +252,36 @@ boundGetX(); // 81
 
 ## When would you use `document.write()`? 😕
 
+It's an unobtrusive way to synchronously include HTML tags into a page while
+it is loading, if JavaScript is enabled.
+
+[QuirksMode](http://www.quirksmode.org/blog/archives/2005/06/three_javascrip_1.html)
+
+It is commonly used in [snippets of HTML](http://stackoverflow.com/a/802894)
+given to consumers to enable services on their web site.
+
+It is [generally considered bad practice](http://javascript.info/tutorial/document-write#the-benefits-and-uses)
+because loading a file that is slow or fails to load,
+or a script that is slow or fails to execute,
+may block the rest of page from rendering.
+
+Perhaps the best use is as an
+[offline fallback loader](http://stackoverflow.com/a/7354319)
+for CDN hosted resources.
+
+When using, there are risks [to be aware of](https://developer.mozilla.org/en-US/docs/Web/API/Document/write).
+
 ## What's the difference between feature detection, feature inference, and using the UA string? 😕
+
+Short answer is [here](http://stackoverflow.com/a/20105161).
+
+Long answer is [here](http://lucybain.com/blog/2014/feature-detection-vs-inference/)
+
+**TL;DR** If you don't know what _feature inference_ is
+and using [Modernizr](https://modernizr.com/),
+you're probably ok.
+
+Points for naming [any browser feature](https://developer.mozilla.org/en-US/docs/Browser_Feature_Detection).
 
 ## Explain AJAX in as much detail as possible. 😕
 
