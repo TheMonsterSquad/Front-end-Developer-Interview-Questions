@@ -19,7 +19,7 @@ even in a global context, the this variable will still refer to an object
 
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
-*   :confused: Explain how prototypal inheritance works
+*   :sunglasses: Explain how prototypal inheritance works
 
 In JavaScript, the inheritance is prototype-based. That means that there are
 no classes. Instead, an object inherits from another object.
