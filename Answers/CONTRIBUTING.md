@@ -13,6 +13,7 @@ and collect citations from reputable sources such as:
     *   [CSS Tricks](https://css-tricks.com/)
     *   [HTML Rocks](http://www.html5rocks.com/)
     *   [SitePoint](http://www.sitepoint.com/)
+    *   [Smashing Magazine: Coding](http://www.smashingmagazine.com/category/coding/)
 
 3.  Place your answer beneath the questions. Use code blocks where appropriate
 and always cite sources as contextually as possible.
