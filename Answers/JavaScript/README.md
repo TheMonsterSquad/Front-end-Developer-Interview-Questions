@@ -1,6 +1,6 @@
 # JavaScript Questions
 
-## 😎 Explain event delegation. -
+## 😎 Explain event delegation. 😎
 
 JavaScript event delegation is a simple technique by which you add a single
 event handler to a parent element in order to avoid having to add event
@@ -8,7 +8,7 @@ handlers to multiple child elements.
 
 [Sitepoint](http://www.sitepoint.com/javascript-event-delegation-is-easier-than-you-think/)
 
-## 😎 Explain how `this` works in JavaScript. -
+## 😎 Explain how `this` works in JavaScript. 😎
 
 Within JavaScript your code will always have some form on context.
 The way context works is through the `this` variable. The this variable will
@@ -19,7 +19,7 @@ even in a global context, the this variable will still refer to an object
 
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
-## 😎 Explain how prototypal inheritance works. -
+## 😎 Explain how prototypal inheritance works. 😎
 
 In JavaScript, the inheritance is prototype-based. That means that there are
 no classes. Instead, an object inherits from another object.
@@ -93,7 +93,7 @@ JavaScript to traverse the "prototype chain"
 
 [Source](http://blog.vjeux.com/2011/javascript/how-prototypal-inheritance-really-works.html)
 
-## 😎 What do you think of AMD vs CommonJS? -
+## 😎 What do you think of AMD vs CommonJS? 😎
 
 CommonJS is a project to define a common API and ecosystem for JavaScript. One
 part of CommonJS is the Module specification. Node.js and RingoJS are
@@ -112,7 +112,7 @@ you can use either module spec in either environment – for example, RequireJS
 offers directions for running in Node.js and browserify is a CommonJS Module
 implementation that can run in the browser
 
-## 😎 What is a hash table? -
+## 😎 What is a hash table? 😎
 
 It is also known as hash map is a data structure used to implement an
 associative array.It is a structure that can map keys to values.
@@ -144,20 +144,20 @@ The hash tables are not effective when the number of entries is very small.
 They are widely used in many kinds of computer software, particularly for
 associative arrays, database indexing, caches and sets.
 
-## 😎 Explain why the following doesn't work as an IIFE: -
+## 😎 Explain why the following doesn't work as an IIFE: 😎
 
 ```javascript
 function foo(){ }();
 ```
 
-### 😎 What needs to be changed to properly make it an IIFE? -
+### 😎 What needs to be changed to properly make it an IIFE? 😎
 
 The Immediately-Invoked Function Expression (IIFE) has it’s syntax to work like:
 `(function(){})();` so to make this function work it should be `(foo(){})().`
 
 [Source](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
 
-## 😎 What's the difference between a variable that is `null`, `undefined` or "undeclared"? -
+## 😎 What's the difference between a variable that is `null`, `undefined` or "undeclared"? 😎
 
 **Undeclared** variables are those that are not declared in the program (do
   not exist at all). Trying to read their values gives runtime error, however if
@@ -170,7 +170,7 @@ primitive type value.
 **Null** is the value of nothing. A variable may be declared and assigned a
 `null` value.
 
-### 😎 How would you go about checking for any of these states? -
+### 😎 How would you go about checking for any of these states? 😎
 
 ```javascript
 if (typeof(variable) !== 'undefined') {
@@ -194,22 +194,22 @@ if (typeof(variable) !== 'undefined') {
 
 [Source](http://lucybain.com/blog/2014/null-undefined-undeclared/)
 
-## 😕 What is a closure, and how/why would you use one? -
+## 😕 What is a closure, and how/why would you use one? 😕
 
-## 😎 What's a typical use case for anonymous functions? -
+## 😎 What's a typical use case for anonymous functions? 😎
 
 Anonymous functions are passed as parameters to other functions to be used as
 callbacks.
 
-## 😕 How do you organize your code? (module pattern, classical inheritance? -
+## 😕 How do you organize your code? (module pattern, classical inheritance? 😕
 
-## 😕 What's the difference between host objects and native objects? -
+## 😕 What's the difference between host objects and native objects? 😕
 
 ## 😕 Difference between: -
 
 `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 
-## 😎 What's the difference between `.call` and `.apply`? -
+## 😎 What's the difference between `.call` and `.apply`? 😎
 
 The main difference is that apply lets you invoke the function with arguments as
 an array; call requires the parameters be listed explicitly.
@@ -221,7 +221,7 @@ theFunction.apply(valueForThis, arrayOfArgs);
 theFunction.call(valueForThis, arg1, arg2, …);
 ```
 
-## 😎 Explain `Function.prototype.bind`. -
+## 😎 Explain `Function.prototype.bind`. 😎
 
 Creates a new function that, when called, has its this keyword set to the
 provided value, with a given sequence of arguments preceding any provided
@@ -243,23 +243,23 @@ var boundGetX = getX.bind(module);
 boundGetX(); // 81
 ```
 
-## 😕 When would you use `document.write()`? -
+## 😕 When would you use `document.write()`? 😕
 
-## 😕 What's the difference between feature detection, feature inference, and using the UA string? -
+## 😕 What's the difference between feature detection, feature inference, and using the UA string? 😕
 
-## 😕 Explain AJAX in as much detail as possible. -
+## 😕 Explain AJAX in as much detail as possible. 😕
 
-## 😕 Explain how JSONP works (and how it's not really AJAX). -
+## 😕 Explain how JSONP works (and how it's not really AJAX). 😕
 
-## 😕 Have you ever used JavaScript templating? -
+## 😕 Have you ever used JavaScript templating? 😕
 
-### 😕 If so, what libraries have you used? -
+### 😕 If so, what libraries have you used? 😕
 
-## 😕 Explain "hoisting". -
+## 😕 Explain "hoisting". 😕
 
-## 😕 Describe event bubbling. -
+## 😕 Describe event bubbling. 😕
 
-## 😎 What's the difference between an "attribute" and a "property"? -
+## 😎 What's the difference between an "attribute" and a "property"? 😎
 
 Attributes carry additional information about an HTML element and come in
 name=”value” pairs.
@@ -271,9 +271,9 @@ value of `my-class`.
 So Attributes are in your HTML text document/file, whereas properties are in
 HTML DOM tree.
 
-## 😕 Why is extending built-in JavaScript objects not a good idea? -
+## 😕 Why is extending built-in JavaScript objects not a good idea? 😕
 
-## 😎 Difference between document load event and document ready event? -
+## 😎 Difference between document load event and document ready event? 😎
 
 The `ready` event occurs after the HTML document has been loaded, while the
 `onload` event occurs later, when all content (e.g. images) also has
@@ -285,9 +285,9 @@ occur as early as possible after the document has loaded, so that code that
 adds functionality to the elements in the page doesn’t have to wait for all
 content to load.
 
-## 😕 What is the difference between `==` and `===`? -
+## 😕 What is the difference between `==` and `===`? 😕
 
-## 😕 Explain the same-origin policy with regards to JavaScript. -
+## 😕 Explain the same-origin policy with regards to JavaScript. 😕
 
 ## 😕 Make this work: -
 
@@ -295,38 +295,38 @@ content to load.
 duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 ```
 
-## 😕 Why is it called a Ternary expression, what does the word "Ternary" indicate? -
+## 😕 Why is it called a Ternary expression, what does the word "Ternary" indicate? 😕
 
-## 😕 What is `"use strict";`? what are the advantages and disadvantages to using it? -
+## 😕 What is `"use strict";`? what are the advantages and disadvantages to using it? 😕
 
-## 😕 Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`. -
+## 😕 Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`. 😕
 
-## 😕 Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it? -
+## 😕 Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it? 😕
 
-## 😕 Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those? -
+## 😕 Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those? 😕
 
-## 😕 Explain what a single page app is and how to make one SEO-friendly. -
+## 😕 Explain what a single page app is and how to make one SEO-friendly. 😕
 
-## 😕 What is the extent of your experience with Promises and/or their polyfills? -
+## 😕 What is the extent of your experience with Promises and/or their polyfills? 😕
 
-## 😕 What are the pros and cons of using Promises instead of callbacks? -
+## 😕 What are the pros and cons of using Promises instead of callbacks? 😕
 
-## 😕 What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript? -
+## 😕 What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript? 😕
 
-## 😕 What tools and techniques do you use debugging JavaScript code? -
+## 😕 What tools and techniques do you use debugging JavaScript code? 😕
 
-## 😕 What language constructions do you use for iterating over object properties and array items? -
+## 😕 What language constructions do you use for iterating over object properties and array items? 😕
 
-## 😕 Explain the difference between mutable and immutable objects. -
+## 😕 Explain the difference between mutable and immutable objects. 😕
 
-### 😕 What is an example of an immutable object in JavaScript? -
+### 😕 What is an example of an immutable object in JavaScript? 😕
 
-### 😕 What are the pros and cons of immutability? -
+### 😕 What are the pros and cons of immutability? 😕
 
-### 😕 How can you achieve immutability in your own code? -
+### 😕 How can you achieve immutability in your own code? 😕
 
-## 😕 Explain the difference between synchronous and asynchronous functions. -
+## 😕 Explain the difference between synchronous and asynchronous functions. 😕
 
-## 😕 What is event loop? -
+## 😕 What is event loop? 😕
 
-### 😕 What is the difference between call stack and task queue? -
+### 😕 What is the difference between call stack and task queue? 😕
