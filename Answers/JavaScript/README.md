@@ -28,25 +28,30 @@ no classes. Instead, an object inherits from another object.
 
 Steps to create a prototype chain:
 
-1.  Create a function `NormalHuman`
+**Step 1**
+
+Create a function `NormalHuman`
 
 ```javascript
 function NormalHuman() {}
 ```
 
-2.  The `NormalHuman` function object will have a
-    `prototype` property, which is an `object` type
+> The `NormalHuman` function object will have a `prototype` property,
+> which is an `object` type
+> The `prototype` object will have a `constructor` property
+> which points to the `NormalHuman` function
 
-3.  The `prototype` object will have a `constructor` property which points
-to the `NormalHuman` function
+**Step 2**
 
-4.  Create another function `SuperHuman`
+Create another function `SuperHuman`
 
 ```javascript
 function SuperHuman() {}
 ```
 
-5.  Allow the `SuperHuman` object to extend `NormalHuman` by
+**Step 3**
+
+Allow the `SuperHuman` object to extend `NormalHuman` by
 setting `SuperHuman.prototype` to an instance of the `NormalHuman` object
 created using the `new` keyword
 
