@@ -3,7 +3,7 @@
 ## Steps to answering a question
 
 1.  Find questions that haven't been answered by searching for 😕 and then
-search [open pull requests](../../pulls) to ensure someone hasn't already answered.
+search [open pull requests](../../../pulls) to ensure someone hasn't already answered.
 If someone has, maybe you can contribute in the comments.
 
 2.  Conduct research to ensure your answer follows current best practices
