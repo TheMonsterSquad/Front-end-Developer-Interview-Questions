@@ -42,7 +42,7 @@
    */
 
   const normalHuman = new NormalHuman({
-    name: 'Clarke Kent'
+    name: 'Clark Kent'
   });
 
   const superHuman = new SuperHuman({

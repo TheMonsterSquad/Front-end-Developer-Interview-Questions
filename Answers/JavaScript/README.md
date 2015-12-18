@@ -71,7 +71,7 @@ new SuperHuman().walk(); // is walking
 ```
 
 > View the [example code](Examples/Prototypal-Inheritance.js)
-> or an [interactive demo](http://jsbin.com/bucoluhayu/edit?js,console).
+> or an [interactive demo](http://jsbin.com/sitagecono/1/edit?js,console).
 
 [Source](http://www.codeproject.com/Articles/887551/Prototypal-inheritance-in-JavaScript)
 
