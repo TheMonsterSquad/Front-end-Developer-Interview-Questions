@@ -1,48 +1,58 @@
 # CSS Questions
 
-* :confused: What is the difference between classes and ID's in CSS?
+## What is the difference between classes and ID's in CSS? 😕
 
-* :confused: What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
+## What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why? 😕
 
-> Reset: It sets default values for basic elements and reduces browser inconsistencies in things like default line heights, margins and font sizes of headings, etc.
+Reset: It sets default values for basic elements and reduces browser
+inconsistencies in things like default line heights, margins and font
+sizes of headings, etc.
 
-> Normalize: TBD
+Normalize: TBD
 
-* :sunglasses: Describe Floats and how they work.
+## Describe Floats and how they work. 😎
 
->  Float is a CSS positioning property. Elements are floated horizontally, this means that an element can only be floated left or right, not up or down.
+ Float is a CSS positioning property. Elements are floated horizontally, this
+ means that an element can only be floated left or right, not up or down.
 
-> A floated element will move as far to the left or right as it can. Usually this means all the way to the left or right of the containing element. The elements after the floating element will flow around it. The elements before the floating element will not be affected.
+A floated element will move as far to the left or right as it can. Usually this
+means all the way to the left or right of the containing element. The elements
+after the floating element will flow around it. The elements before the
+floating element will not be affected.
 
-> *Note: Elements after the floating element will flow around it. To avoid this, use the clear property. The clear property specifies which sides of an element other floating elements are not allowed.*
+*Note: Elements after the floating element will flow around it. To avoid this, use the clear property. The clear property specifies which sides of an element other floating elements are not allowed.*
 
-* :confused: Describe z-index and how stacking context is formed.
+## Describe z-index and how stacking context is formed. 😕
 
-* :confused: Describe BFC(Block Formatting Context) and how it works.
+## Describe BFC(Block Formatting Context) and how it works. 😕
 
-* :sunglasses: What are the various clearing techniques and which is appropriate for what context?
+## What are the various clearing techniques and which is appropriate for what context? 😎
 
-> add a empty element `clear: both/left/right`: semantically too verbose
-`overflow: hidden`: good one, but something, overflow is been used.
-clearfix use :after psudo-class: require CSS3 support
+1 - **Floating the container**
 
+If you float an element containing floats, it will encompass its content. The
+side-effect of this is that we add another floated element to the page, while
+we most of the times want it to behave as a regular block element. That is
+solved by applying a width of 100% to the container as well, so it forces
+a line-break before the content after it.
 
-> 1 - **Floating the container**
+**Downsides**
 
-> If you float an element containing floats, it will encompass its content. The side-effect of this is that we add another floated element to the page, while we most of the times want it to behave as a regular block element. That is solved by applying a width of 100% to the container as well, so it forces a line-break before the content after it.
+*   Setting a width to 100% might collide with desired padding.
+*   IE 6 seems to add an extra bottom margin in some cases.
 
-> **Downsides**
-* Setting a width to 100% might collide with desired padding.
-* IE 6 seems to add an extra bottom margin in some cases.
+2 -  **Adding `overflow: hidden;` To the container**
 
+If you add `overflow: hidden;` to the containing element, it will automatically
+adjust its height and take the floated children into account.
 
-> 2 -  **Adding `overflow: hidden;` To the container**
+3 - **Generating Content Through CSS (recommended)**
 
-> If you add `overflow: hidden;` to the containing element, it will automatically adjust its height and take the floated children into account.
+Another alternative is to use the CSS pseudo-class `:after` to generate content
+after the containing element, using it to clear floats and then hiding itself.
+Personally, I don’t like this approach since it generates content to the page
+that has nothing to do there in the first place.
 
-> 3 - **Generating Content Through CSS (recommended)**
-
-> Another alternative is to use the CSS pseudo-class `:after` to generate content after the containing element, using it to clear floats and then hiding itself. Personally, I don’t like this approach since it generates content to the page that has nothing to do there in the first place.
 ```css
 .container-with-generated-content:after {
   content: ".";
@@ -53,30 +63,40 @@ clearfix use :after psudo-class: require CSS3 support
 }
 ```
 
-> **Downsides**
+**Downsides**
 
-> Not IE 6 nor IE 7 supports the `:after` pseudo-class, so you need to apply a hasLayout fix for both of them. Note that IE 7 also supports a hasLayout fix.
+Not IE 6 nor IE 7 supports the `:after` pseudo-class, so you need to apply a
+hasLayout fix for both of them. Note that IE 7 also supports a hasLayout fix.
 
-* :sunglasses: Explain CSS sprites, and how you would implement them on a page or site.
+## Explain CSS sprites, and how you would implement them on a page or site. 😎
 
-> CSS Sprites is a method of combining multiple images used throughout your website into one large image (or "sprite") to reduce the total number network requests for images. Using this sprite image with the proper `background-position` CSS attributes and X, Y coordinates, it is then possible to display a particular image.
+CSS Sprites is a method of combining multiple images used throughout your
+website into one large image (or "sprite") to reduce the total number
+network requests for images. Using this sprite image with the proper
+`background-position` CSS attributes and X, Y coordinates, it is
+then possible to display a particular image.
 
-> [CSS Tricks](http://css-tricks.com/css-sprites/)
+[CSS Tricks](http://css-tricks.com/css-sprites/)
 
-* :sunglasses: What are your favorite image replacement techniques and which do you use when?
+## What are your favorite image replacement techniques and which do you use when? 😎
 
-> [CSS Tricks](https://css-tricks.com/the-image-replacement-museum/) technique museum.
+[CSS Tricks](https://css-tricks.com/the-image-replacement-museum/) technique museum.
 
-> Bonus points for knowing [potential SEO risk](https://support.google.com/webmasters/answer/66353).
+Bonus points for knowing [potential SEO risk](https://support.google.com/webmasters/answer/66353).
 
-> **2014: H5BP Image Replacement 2**
+**2014: H5BP Image Replacement 2**
 
-> This doesn't really replace a single element with an image, it just does a good job at hiding an element from view while remaining accessible to screen readers. So you could use whatever you wanted to display the image, then put text next to it.
+This doesn't really replace a single element with an image, it just does a
+good job at hiding an element from view while remaining accessible to screen
+readers. So you could use whatever you wanted to display the image, then put
+text next to it.
+
 ```html
 <h1 class="visuallyhidden">
   H5BP
 </h1>
 ```
+
 ```css
 h1.visuallyhidden {
   border: 0;
@@ -90,18 +110,20 @@ h1.visuallyhidden {
 }
 ```
 
-> Hide only visually, but have it available for screen readers:
+Hide only visually, but have it available for screen readers:
 
-> [Source](http://snook.ca/archives/html_and_css/hiding-content-for-accessibility)
+[Source](http://snook.ca/archives/html_and_css/hiding-content-for-accessibility)
 
-> **2012: Scott Kellum Method**
+**2012: Scott Kellum Method**
 
-> Positions text outside the container and hides with overflow.
->```html
+Positions text outside the container and hides with overflow.
+
+```html
 <h1>
   Scott Kellum Method
 </h1>
 ```
+
 ```css
 h3.skm {
   width: 300px;
@@ -113,111 +135,136 @@ h3.skm {
 }
 ```
 
-> [Source](http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/)
+[Source](http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/)
 
-* :sunglasses: How would you approach fixing browser-specific styling issues?
+## How would you approach fixing browser-specific styling issues? 😎
 
-> 1 - Browser specific CSS hacks
+1 - Browser specific CSS hacks
+
 ```css
 _color: blue /* ie6 */
 *color: blue /* ie6, ie7 */
 color: blue\9 /* ie6, ie7, ie8 */
 ```
- > 2 - Conditional stylesheets
+
+ 2 - Conditional stylesheets
+
 ```html
 <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 <!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="css/ie7.css"  />< ![endif]-->
 <!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="css/ie6.css"  />< ![endif]-->
 ```
+
 3 - Conditional comments to set classes on the html element
+
 ```html
-<!--[if lt IE 7]>      <html class="ie6"> <![endif]-->
+<!--[if lt IE 7]     <html class="ie6"> <![endif]-->
 <!--[if IE 7]>         <html class="ie7"> <![endif]-->
 <!--[if IE 8]>         <html class="ie8"> <![endif]-->
 <!--[if gt IE 8]><!--> <html>         <!--<![endif]-->
 ```
+
 ```css
 div.foo { color: inherit;}
 .ie6 div.foo { color: #ff8000; }
 ```
 
-* :sunglasses: How do you serve your pages for feature-constrained browsers?
-  * :sunglasses: What techniques/processes do you use?
+## How do you serve your pages for feature-constrained browsers? 😎
 
-> **Graceful Degredation** is an older, fault tolerant approach of disabling features based entirely on which browser is detected.
+### What techniques/processes do you use? 😎
 
-> **Progressive Enhancement** is able to support evergreen browsers by detecting support for specific features for HTML, CSS & JavaScript. Modernizr can be used to detect many HTML5 API's and CSS3 rules. If backwards compatibility is necessary, features may be supported using polyfills such as those provided by Autoprefixer or Babel.
+**Graceful Degredation** is an older, fault tolerant approach of disabling
+features based entirely on which browser is detected.
 
-* :sunglasses: What are the different ways to visually hide content (and make it available only for screen readers)?
+**Progressive Enhancement** is able to support evergreen browsers by
+detecting support for specific features for HTML, CSS & JavaScript.
+Modernizr can be used to detect many HTML5 API's and CSS3 rules.
+If backwards compatibility is necessary, features may be supported
+using polyfills such as those provided by Autoprefixer or Babel.
 
->1. `position: absolute;  margin-left: -10000px;`
-1. `display: none;`
-1. `opacity: 0.0;`
-1. `visibility: hidden;` # without changing the layout
+## What are the different ways to visually hide content (and make it available only for screen readers)? 😎
 
-* :confused: Have you ever used a grid system, and if so, what do you prefer?
+1.  `position: absolute;  margin-left: -10000px;`
+2.  `display: none;`
+3.  `opacity: 0.0;`
+4.  `visibility: hidden;` # without changing the layout
 
-> Quickly [compare](http://responsive.vermilion.com/compare.php) Bootstrap and Foundation or reference comparison [criteria and explanations](https://github.com/corysimmons/lost/wiki/Comparison-Explanation) from Lost Grid.
+## Have you ever used a grid system, and if so, what do you prefer? 😕
 
-* :confused: Have you used or implemented media queries or mobile specific layouts/CSS?
+Quickly [compare](http://responsive.vermilion.com/compare.php) Bootstrap and
+Foundation or reference comparison
+[criteria and explanations](https://github.com/corysimmons/lost/wiki/Comparison-Explanation)
+from Lost Grid.
 
-> [Smashing Magazine](http://mobile.smashingmagazine.com/2010/07/19/how-to-use-css3-media-queries-to-create-a-mobile-version-of-your-website/)
+## Have you used or implemented media queries or mobile specific layouts/CSS? 😕
 
-* :confused: Are you familiar with styling SVG?
+[Smashing Magazine](http://mobile.smashingmagazine.com/2010/07/19/how-to-use-css3-media-queries-to-create-a-mobile-version-of-your-website/)
 
-* :confused: How do you optimize your webpages for print?
+## Are you familiar with styling SVG? 😕
 
-> In the case of a print stylesheet when the page is printed this functionality is enabled in CSS2 by media types. Media Types let you specify a type of media to target, so you could target print.
+## How do you optimize your webpages for print? 😕
 
-> Steps:
-1. Create a stylesheet for print
-1. Avoid unnecessary HTML tables
-1. Know which portions of the page don't have any print value and use `.no-print { display: none; }`
-1. Use page breaks
-1. Size size your page for print
-1. Test!
+In the case of a print stylesheet when the page is printed this functionality
+is enabled in CSS2 by media types. Media Types let you specify a type of media
+to target, so you could target print.
 
-> [Smashing Magazine](http://www.smashingmagazine.com/2011/11/how-to-set-up-a-print-style-sheet/)
+Steps:
 
-* :confused: What are some of the "gotchas" for writing efficient CSS?
+1.  Create a stylesheet for print
 
-> * Use a CSS reset
-* Clear things up
-* Box Model
-* IE is bad but have to deal with it with tricks
+2.  Avoid unnecessary HTML tables
 
-* :confused: What are the advantages/disadvantages of using CSS preprocessors?
-  * :confused: Describe what you like and dislike about the CSS preprocessors you have used.
+3.  Know which portions of the page don't have any print value and use
+`.no-print { display: none; }`
 
+4.  Use page breaks
 
-* :confused: How would you implement a web design comp that uses non-standard fonts?
+5.  Size size your page for print
 
-> Webfonts (font services like: Google Webfonts, Typekit etc.)
+6.  Test!
 
-* :confused: Explain how a browser determines what elements match a CSS selector.
+[Smashing Magazine](http://www.smashingmagazine.com/2011/11/how-to-set-up-a-print-style-sheet/)
 
-> Browsers match from the right; it gives an obvious starting point and lets you get rid of most of the candidate selectors very quickly
+## What are some of the "gotchas" for writing efficient CSS? 😕
 
-* :confused: Describe pseudo-elements and discuss what they are used for.
+*   Use a CSS reset
+*   Clear things up
+*   Box Model
+*   IE is bad but have to deal with it with tricks
 
-* :confused: Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
+## What are the advantages/disadvantages of using CSS preprocessors? 😕
 
-* :confused: What does ```* { box-sizing: border-box; }``` do? What are its advantages?
+### Describe what you like and dislike about the CSS preprocessors you have used. 😕
 
-* :confused: List as many values for the display property that you can remember.
+## How would you implement a web design comp that uses non-standard fonts? 😕
 
-* :confused: What's the difference between inline and inline-block?
+Webfonts (font services like: Google Webfonts, Typekit etc.)
 
-* :confused: What's the difference between a relative, fixed, absolute and statically positioned element?
+## Explain how a browser determines what elements match a CSS selector. 😕
 
-* :confused: The 'C' in CSS stands for Cascading.  How is priority determined in assigning styles (a few examples)?  How can you use this system to your advantage?
+Browsers match from the right; it gives an obvious starting point and lets you
+get rid of most of the candidate selectors very quickly
 
-* :confused: What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
+## Describe pseudo-elements and discuss what they are used for. 😕
 
-* :confused: Have you played around with the new CSS Flexbox or Grid specs?
+## Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models. 😕
 
-* :confused: How is responsive design different from adaptive design?
+## What does ```* { box-sizing: border-box; }``` do? What are its advantages? 😕
 
-* :confused: Have you ever worked with retina graphics? If so, when and what techniques did you use?
+## List as many values for the display property that you can remember. 😕
 
-* :confused: Is there any reason you'd want to use `translate()` instead of *absolute positioning*, or vice-versa? And why?
+## What's the difference between inline and inline-block? 😕
+
+## What's the difference between a relative, fixed, absolute and statically positioned element? 😕
+
+## The 'C' in CSS stands for Cascading.  How is priority determined in assigning styles (a few examples)?  How can you use this system to your advantage? 😕
+
+## What existing CSS frameworks have you used locally, or in production? How would you change/improve them? 😕
+
+## Have you played around with the new CSS Flexbox or Grid specs? 😕
+
+## How is responsive design different from adaptive design? 😕
+
+## Have you ever worked with retina graphics? If so, when and what techniques did you use? 😕
+
+## Is there any reason you'd want to use `translate()` instead of *absolute positioning*, or vice-versa? And why? 😕

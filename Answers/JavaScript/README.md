@@ -6,7 +6,7 @@ JavaScript event delegation is a simple technique by which you add a single
 event handler to a parent element in order to avoid having to add event
 handlers to multiple child elements.
 
-[Sitepoint](http://www.sitepoint.com/javascript-event-delegation-is-easier-than-you-think/)
+[SitePoint](http://www.sitepoint.com/javascript-event-delegation-is-easier-than-you-think/)
 
 ## Explain how `this` works in JavaScript. 😎
 
