@@ -2,7 +2,9 @@
 
 ## Steps to answering a question
 
-1.  Find questions that haven't been answered by searching for 😕.
+1.  Find questions that haven't been answered by searching for 😕 and then
+search [open pull requests](pulls) to ensure someone hasn't already answered.
+If someone has, maybe you can contribute in the comments.
 
 2.  Conduct research to ensure your answer follows current best practices
 and collect citations from reputable sources such as:
@@ -17,6 +19,10 @@ and collect citations from reputable sources such as:
 
 3.  Place your answer beneath the questions. Use code blocks where appropriate
 and always cite sources as contextually as possible.
+
+4.  Replace 😕face next to the question with a 😎 face.
+
+5.  Open a pull request.
 
 ## Regarding [W3Schools](http://www.w3schools.com/) 🐛
 
