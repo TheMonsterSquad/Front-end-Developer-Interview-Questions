@@ -145,13 +145,7 @@ The hash tables are not effective when the number of entries is very small.
 They are widely used in many kinds of computer software, particularly for
 associative arrays, database indexing, caches and sets.
 
-## Explain why the following doesn't work as an IIFE: 😎
-
-```javascript
-function foo(){ }();
-```
-
-### What needs to be changed to properly make it an IIFE? 😎
+## Explain why the following doesn't work as an IIFE: `function foo(){ }();` 😎
 
 The Immediately-Invoked Function Expression (IIFE) has it’s
 syntax to work like:
@@ -159,6 +153,8 @@ syntax to work like:
 ```javascript
 (function(){ })();
 ```
+
+### What needs to be changed to properly make it an IIFE? 😎
 
  To make this function work it should be:
 

@@ -39,7 +39,7 @@ is Internet Explorer 9.
 To support multi language, include the tag `<meta charset="utf-8">` inside
 the document `<head>` tag.
 
-[W3](http://www.w3.org/International/O-charset)
+[W3C](http://www.w3.org/International/O-charset)
 / [Stack Overflow](https://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type)
 
 To indicate what language is used inside a tag, use the `lang` attribute.

@@ -9,7 +9,7 @@ If someone has, maybe you can contribute in the comments.
 2.  Conduct research to ensure your answer follows current best practices
 and collect citations from reputable sources such as:
 
-    *   [W3](http://www.w3.org/)
+    *   [W3C](http://www.w3.org/)
     *   [MDN](https://developer.mozilla.org/)
     *   [Stack Overflow](https://stackoverflow.com/)
     *   [CSS Tricks](https://css-tricks.com/)
