@@ -70,7 +70,8 @@ NormalHuman.prototype.walk = function() {
 new SuperHuman().walk(); // is walking
 ```
 
-[Full Demo](http://jsbin.com/deyelopora/edit?js,console)
+> View the [example code](Examples/Prototypal-Inheritance.js)
+> or an [interactive demo](http://jsbin.com/bucoluhayu/edit?js,console).
 
 [Source](http://www.codeproject.com/Articles/887551/Prototypal-inheritance-in-JavaScript)
 
@@ -152,8 +153,18 @@ function foo(){ }();
 
 ### What needs to be changed to properly make it an IIFE? 😎
 
-The Immediately-Invoked Function Expression (IIFE) has it’s syntax to work like:
-`(function(){})();` so to make this function work it should be `(foo(){})().`
+The Immediately-Invoked Function Expression (IIFE) has it’s
+syntax to work like:
+
+```javascript
+(function(){ })();
+```
+
+ To make this function work it should be:
+
+ ```javascript
+ (function foo(){ })().
+ ```
 
 [Source](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
 
