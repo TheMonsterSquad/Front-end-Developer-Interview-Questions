@@ -34,7 +34,7 @@ Steps to create a prototype chain:
 function NormalHuman() {}
 ```
 
-2.  The `Animal` function object will have a
+2.  The `NormalHuman` function object will have a
     `prototype` property, which is an `object` type
 
 3.  The `prototype` object will have a `constructor` property which points
