@@ -150,7 +150,7 @@ associative arrays, database indexing, caches and sets.
 function foo(){ }();
 ```
 
-## 😎 What needs to be changed to properly make it an IIFE? -
+### 😎 What needs to be changed to properly make it an IIFE? -
 
 The Immediately-Invoked Function Expression (IIFE) has it’s syntax to work like:
 `(function(){})();` so to make this function work it should be `(foo(){})().`
