@@ -17,3 +17,4 @@ Please read and follow [these guidelines](CONTRIBUTING.md).
 
 *   [Yehia Abed](http://yehiaabed.com/blog/html-questions-answers/)
 *   [GingerBear](https://github.com/GingerBear/Front-end-Developer-Interview-Questions-QA)
+*   [Lucy Bain](http://lucybain.com/blog/tags/interview-questions/)

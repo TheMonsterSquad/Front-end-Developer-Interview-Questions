@@ -11,6 +11,7 @@ handlers to multiple child elements.
 ## Explain how `this` works in JavaScript. 😎
 
 Within JavaScript your code will always have some form on context.
+
 The way context works is through the `this` variable. The this variable will
 always refer to the object that the code is currently inside of. Remember that
 global objects are actually properties of the `window` object. This means that
@@ -147,16 +148,17 @@ associative arrays, database indexing, caches and sets.
 
 ## Explain why the following doesn't work as an IIFE: `function foo(){ }();` 😎
 
-The Immediately-Invoked Function Expression (IIFE) has it’s
-syntax to work like:
+The most widely accepted way to tell the parser to expect a function
+expression is just to wrap in in parens, because in JavaScript, parens
+can’t contain statements. At this point, when the parser encounters the
+function keyword, it knows to parse it as a function expression and not
+a function declaration.
 
-```javascript
-(function(){ })();
-```
+[Matthew Zhong](https://flowerszhong.github.io/2013/11/20/javascript-questions.html)
 
 ### What needs to be changed to properly make it an IIFE? 😎
 
- To make this function work it should be:
+ Should be:
 
  ```javascript
  (function foo(){ })().
@@ -201,14 +203,101 @@ if (typeof(variable) !== 'undefined') {
 
 [Source](http://lucybain.com/blog/2014/null-undefined-undeclared/)
 
-## What is a closure, and how/why would you use one? 😕
+## What is a closure, and how/why would you use one? 😎
+
+How closures work by [Lucy Bain](http://lucybain.com/blog/2014/closures/).
+
+Uses include:
+
+*   Hiding state - [Example](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#Practical_closures)
+*   Classical OO in JavaScript
+*   Object factories
+*   Events and callbacks
+
+[Howto Node](http://howtonode.org/why-use-closure)
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#Practical_closures)
 
 ## What's a typical use case for anonymous functions? 😎
 
 Anonymous functions are passed as parameters to other functions to be used as
 callbacks.
 
-## How do you organize your code? (module pattern, classical inheritance? 😕
+Answer by [Lucy Bain](http://lucybain.com/blog/2014/anonymous-functions/).
+
+## How do you organize your code? (module pattern, classical inheritance? 😎
+
+Should mention:
+
+*   [ES6](http://www.sitepoint.com/understanding-es6-modules/)
+or [CommonJS](http://spinejs.com/docs/commonjs) modules
+
+*   [Module](http://eloquentjavascript.net/10_modules.html) vs [components](http://addyosmani.com/first/)
+
+*   [Namespacing](http://www.codeproject.com/Articles/553922/Javascript-namespacing) and [API design](http://webstandardssherpa.com/reviews/secrets-of-awesome-javascript-api-design/)
+
+*   Package manager such as [NPM](https://www.npmjs.com), [Bower](http://bower.io/), [JSPM](http://jspm.io/)
+
+*   Module loader such as [Browserify](http://browserify.org/), [webpack](https://webpack.github.io/) or [SystemJS](https://github.com/systemjs/systemjs)
+
+*   Managing local modules while avoiding
+[`require()`](https://gist.github.com/branneman/8048520)
+paths that look like [`../../../../../../..`](https://github.com/substack/browserify-handbook#avoiding-)
+
+*   [Separation of Concerns](https://viget.com/extend/client-side-separation-of-concerns-are-we-doing-it-wrong) vs. [Separation of Technologies](http://www.bitnative.com/2015/03/18/is-separating-html-and-javascript-harmful/)
+
+*   **Bonus Points** [Domain Driven Development](https://en.wikipedia.org/wiki/Domain-driven_design) and [Domain Specific Languages](https://en.wikipedia.org/wiki/Domain-specific_language)
+
+*   Looking for a file structure that resembles:
+
+```bash
+.
+│
+├── index.html
+├── index.js
+├── index.css
+│
+├── pages
+│   │
+│   ├── page-one
+│   │   |
+│   │   ├── index.html
+│   │   ├── index.js
+│   │   └── index.css
+│   │
+│   └── page-two
+│       |
+│       ├── index.html
+│       ├── index.js
+│       └── index.css
+│
+├── modules
+│   │
+│   ├── header
+│   │   |
+│   │   ├── index.html
+│   │   ├── index.js
+│   │   └── index.css
+│   │
+│   └── footer
+│       |
+│       ├── index.html
+│       ├── index.js
+│       └── index.css
+│
+└── components
+    │
+    ├── button
+    │   |
+    │   ├── index.html
+    │   ├── index.js
+    │   └── index.css
+    │
+    └── input
+        |
+        ├── index.html
+        ├── index.js
+        └── index.css
+```
 
 ## What's the difference between host objects and native objects? 😕
 
@@ -225,6 +314,7 @@ Examples:
 
 ```javascript
 theFunction.apply(valueForThis, arrayOfArgs);
+
 theFunction.call(valueForThis, arg1, arg2, …);
 ```
 
@@ -238,19 +328,24 @@ Example:
 
 ```javascript
 var x = 9;
+
 var module = {
   x: 81,
   getX: function() { return this.x; }
 };
+
 module.getX(); // 81
+
 var getX = module.getX;
 getX(); // 9, because in this case, `this` refers to the global object
+
 // create a new function with `this` bound to module
 var boundGetX = getX.bind(module);
+
 boundGetX(); // 81
 ```
 
-## When would you use `document.write()`? 😕
+## When would you use `document.write()`? 😎
 
 It's an unobtrusive way to synchronously include HTML tags into a page while
 it is loading, if JavaScript is enabled.
@@ -271,7 +366,7 @@ for CDN hosted resources.
 
 When using, there are risks [to be aware of](https://developer.mozilla.org/en-US/docs/Web/API/Document/write).
 
-## What's the difference between feature detection, feature inference, and using the UA string? 😕
+## What's the difference between feature detection, feature inference, and using the UA string? 😎
 
 Short answer is [here](http://stackoverflow.com/a/20105161).
 
@@ -287,9 +382,28 @@ Points for naming [any browser feature](https://developer.mozilla.org/en-US/docs
 
 ## Explain how JSONP works (and how it's not really AJAX). 😕
 
-## Have you ever used JavaScript templating? 😕
+[How JSONP works](http://lucybain.com/blog/2015/how-does-jsonp-work/).
+
+How JSONP is different from AJAX::
+
+*   Can only work with a JSONP enabled server API
+*   Can only use the HTTP `GET` method
+*   _Can make cross domain requests_
+
+## Have you ever used JavaScript templating? 😎
+
+```html
+<p>Your answer it, "{{ answer | capitalize | replace("Yes", "No" }}!"</p>
+```
 
 ### If so, what libraries have you used? 😕
+
+Looking for:
+
+*   [Handlebars](http://handlebarsjs.com/) or [Mustache](https://mustache.github.io/)
+*   [Swig](https://paularmstrong.github.io/swig/) or [Nunjucks](https://mozilla.github.io/nunjucks/)
+*   [Underscore](https://lodash.com/docs#template) or [EJS](http://www.embeddedjs.com/)
+*   [Jade](http://jade-lang.com/)
 
 ## Explain "hoisting". 😕
 
