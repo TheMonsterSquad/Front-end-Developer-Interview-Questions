@@ -415,6 +415,8 @@ Points for naming [any browser feature](https://developer.mozilla.org/en-US/docs
 *   Typically used to request JSON data to update parts of a
 page without a full page refresh
 
+Detailed answer from [Lucy Bain](http://lucybain.com/blog/2015/js-how-does-ajax-work/).
+
 ## Explain how JSONP works (and how it's not really AJAX). 😎
 
 [How JSONP works](http://lucybain.com/blog/2015/how-does-jsonp-work/).
