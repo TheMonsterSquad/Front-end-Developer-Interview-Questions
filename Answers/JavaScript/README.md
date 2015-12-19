@@ -156,6 +156,8 @@ a function declaration.
 
 [Matthew Zhong](https://flowerszhong.github.io/2013/11/20/javascript-questions.html)
 
+Definition of syntax and naming convention by [Ben Alman](http://benalman.com/news/2010/11/immediately-invoked-function-expression/).
+
 ### What needs to be changed to properly make it an IIFE? 😎
 
  Should be:
@@ -163,8 +165,6 @@ a function declaration.
  ```javascript
  (function foo(){ })().
  ```
-
-[Source](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
 
 ## What's the difference between a variable that is `null`, `undefined` or "undeclared"? 😎
 
@@ -209,13 +209,15 @@ How closures work by [Lucy Bain](http://lucybain.com/blog/2014/closures/).
 
 Uses include:
 
-*   Hiding state - [Example](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#Practical_closures)
+*   Hiding state -> [Example](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#Practical_closures)
 *   Classical OO in JavaScript
 *   Object factories
 *   Events and callbacks
 
-[Howto Node](http://howtonode.org/why-use-closure)
-[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#Practical_closures)
+Sources:
+
+*   [Howto Node](http://howtonode.org/why-use-closure)
+*   [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#Practical_closures)
 
 ## What's a typical use case for anonymous functions? 😎
 
@@ -251,7 +253,6 @@ paths that look like [`../../../../../../..`](https://github.com/substack/browse
 
 ```bash
 .
-│
 ├── index.html
 ├── index.js
 ├── index.css
@@ -299,7 +300,34 @@ paths that look like [`../../../../../../..`](https://github.com/substack/browse
         └── index.css
 ```
 
-## What's the difference between host objects and native objects? 😕
+## What's the difference between host objects and native objects? 😎�
+
+**Native** objects are those supplied by JavaScript.
+Examples of these are String, Number, Array, Image, Date, Math, etc.
+
+**Host** objects are those supplied to JavaScript by the host environment.
+
+Examples of global objects [specific to browsers](https://developer.mozilla.org/en-US/docs/Web/API) are:
+
+*   `window`
+*   `document`
+*   `forms`
+
+Examples of global objects [specific to Node.js](https://nodejs.org/api/globals.html) are:
+
+*   `__dirname`
+*   `process`
+*   `exports`
+
+Examples global objects shared between environments are:
+
+*   `console`
+*   `setInterval`
+*   `clearTimeout`
+
+Short answer by [Matthew Zhong](https://flowerszhong.github.io/2013/11/20/javascript-questions.html).
+
+Detailed answer from [Lucy Bain](http://lucybain.com/blog/2014/host-vs-native/).
 
 ## Difference between: -
 
@@ -307,8 +335,8 @@ paths that look like [`../../../../../../..`](https://github.com/substack/browse
 
 ## What's the difference between `.call` and `.apply`? 😎
 
-The main difference is that apply lets you invoke the function with arguments as
-an array; call requires the parameters be listed explicitly.
+The main difference is that apply lets you invoke the function with arguments
+as an array; call requires the parameters be listed explicitly.
 
 Examples:
 
@@ -368,19 +396,26 @@ When using, there are risks [to be aware of](https://developer.mozilla.org/en-US
 
 ## What's the difference between feature detection, feature inference, and using the UA string? 😎
 
-Short answer is [here](http://stackoverflow.com/a/20105161).
+Short answer from [Stack Overflow](http://stackoverflow.com/a/20105161).
 
-Long answer is [here](http://lucybain.com/blog/2014/feature-detection-vs-inference/)
+Detailed answer from [here](http://lucybain.com/blog/2014/feature-detection-vs-inference/).
 
 **TL;DR** If you don't know what _feature inference_ is
-and using [Modernizr](https://modernizr.com/),
+and are using [Modernizr](https://modernizr.com/),
 you're probably ok.
 
 Points for naming [any browser feature](https://developer.mozilla.org/en-US/docs/Browser_Feature_Detection).
 
 ## Explain AJAX in as much detail as possible. 😕
 
-## Explain how JSONP works (and how it's not really AJAX). 😕
+*   Stands for (**A**)synchronous (**J**)avaScript (**a**)nd (**X**)ML
+
+*   Typically makes use of the `XMLHttpRequest` (XHR) object
+
+*   Typically used to request JSON data to update parts of a
+page without a full page refresh
+
+## Explain how JSONP works (and how it's not really AJAX). 😎
 
 [How JSONP works](http://lucybain.com/blog/2015/how-does-jsonp-work/).
 
@@ -393,10 +428,10 @@ How JSONP is different from AJAX::
 ## Have you ever used JavaScript templating? 😎
 
 ```html
-<p>Your answer it, "{{ answer | capitalize | replace("Yes", "No" }}!"</p>
+<p>Your answer is, "{{ answer | capitalize | replace("Yes", "No" }}!"</p>
 ```
 
-### If so, what libraries have you used? 😕
+### If so, what libraries have you used? 😎
 
 Looking for:
 
@@ -405,9 +440,48 @@ Looking for:
 *   [Underscore](https://lodash.com/docs#template) or [EJS](http://www.embeddedjs.com/)
 *   [Jade](http://jade-lang.com/)
 
-## Explain "hoisting". 😕
+## Explain "hoisting". 😎
 
-## Describe event bubbling. 😕
+Function declarations and variable declarations are always moved (“hoisted”)
+invisibly to the top of their containing scope by the JavaScript interpreter.
+
+This means that code like this:
+
+```javascript
+function foo() {
+    bar();
+    var x = 1;
+}
+```
+
+Is actually interpreted like this:
+
+```javascript
+function foo() {
+    var x;
+    bar();
+    x = 1;
+}
+```
+
+Short answer from [Matthew Zhong](https://flowerszhong.github.io/2013/11/20/javascript-questions.html).
+
+Detailed answer from [Lucy Bain](http://lucybain.com/blog/2014/hoisting/).
+
+Further explanation from [SitePoint](http://www.sitepoint.com/back-to-basics-javascript-hoisting/).
+
+## Describe event bubbling. 😎
+
+**Event Flow** describes the order in which events are received on the page.
+An event has three phases to its life cycle: capture, target, and bubbling.
+
+**Event Bubbling** means that an event start at the most specific element
+(the deepest possible point to the document tree) and then flow upward
+toward the least specific node(the document).
+
+Short answer from [Matthew Zhong](https://flowerszhong.github.io/2013/11/20/javascript-questions.html).
+
+Detailed answer from [Lucy Bain](http://lucybain.com/blog/2014/event-bubbling/).
 
 ## What's the difference between an "attribute" and a "property"? 😎
 

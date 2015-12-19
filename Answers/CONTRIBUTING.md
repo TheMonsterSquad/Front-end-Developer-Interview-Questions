@@ -11,11 +11,12 @@ and collect citations from reputable sources such as:
 
     *   [W3C](http://www.w3.org/)
     *   [MDN](https://developer.mozilla.org/)
+    *   [Quirks Mode](http://www.quirksmode.org/)
     *   [Stack Overflow](https://stackoverflow.com/)
     *   [CSS Tricks](https://css-tricks.com/)
     *   [HTML Rocks](http://www.html5rocks.com/)
     *   [SitePoint](http://www.sitepoint.com/)
-    *   [Smashing Magazine: Coding](http://www.smashingmagazine.com/category/coding/)
+    *   [Smashing Magazine](http://www.smashingmagazine.com/category/coding/)
 
 3.  Place your answer beneath the questions. Use code blocks where appropriate
 and always cite sources as contextually as possible.
