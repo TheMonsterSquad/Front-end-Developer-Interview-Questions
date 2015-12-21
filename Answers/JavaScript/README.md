@@ -633,11 +633,100 @@ for (var i = 1; i <= 100; i++) {
 
 More solutions on [GitHub](https://gist.github.com/jaysonrowe/1592432#gistcomment-790724)
 
-## Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it? 😕
+## Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it? 😎
 
-## Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those? 😕
+Reasons:
 
-## Explain what a single page app is and how to make one SEO-friendly. 😕
+*    It’s harder to read the code and reason about it when variables seem to
+appear out of thin air (but really from the global scope).
+*    Anyone can update a global variable from any point in the program at any
+time (and from any thread if there’s more than one going).
+*    General code smell - if you're too lazy to put the variable only where it
+needs to be then what other corners are you cutting?
+*    It’s probable that you'll encounter global variable name clashes. Since
+there’s only one namespace you're more likely to double up on a variable name.
+
+**Bonus Points** variable declarations default to the global scope if the `var`
+keyword is omitted.
+
+Answer from [Lucy Bain](http://lucybain.com/blog/2014/js-dont-touch-global-scope/)
+
+## Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those? 😎
+
+**Use Cases**
+
+1.  In a single page app (SPA) the `load` event on the `window` object could be
+used to detect when all necessary resources have been loaded in order to display
+the initial state of the page and then initiate background loading of resources
+that may otherwise be loaded though changes to the application state.
+This would result in an increase in overall network activity but potentially
+decrease perceived load times.
+
+A disadvantage is that IE8 does not support the `addEventListener` method and so
+the corresponding `onload` event [must be applied conditionally](https://msdn.microsoft.com/en-us/library/windows/apps/hh465984.aspx)
+using the `attachEvent` method.
+
+An alternative would be to use "lazy" loading to optimize how the page elements
+are loaded and rendered.
+
+2.  More commonly, the event is used to detect when elements of a page and
+their dependencies have loaded so that the element may be safely displayed.
+
+A disadvantage is that cross-browser support and browser caching are [known issues](https://api.jquery.com/load-event/).
+
+There are [libraries](https://desandro.github.io/imagesloaded/) that work to
+normalize support and behavior for this use case.
+
+## Explain what a single page app is and how to make one SEO-friendly. 😎
+
+A single-page application (SPA) is a web application or web site that fits on a
+single web page with the goal of providing a more fluid user experience akin to
+a desktop application. In a SPA, either all necessary code – HTML, JavaScript,
+and CSS – is retrieved with a single page load, or the appropriate resources
+are dynamically loaded and added to the page as necessary, usually in response
+to user actions. The page does not reload at any point in the process, nor does
+control transfer to another page, although modern web technologies (such as
+those included in the HTML5 pushState() API) can provide the perception and
+navigability of separate logical pages in the application. Interaction with
+the single page application often involves dynamic communication with the
+web server behind the scenes.
+
+[Wikipedia](https://en.wikipedia.org/wiki/Single-page_application)
+
+SPA's suffer from the same issues as any app that uses JavaScript to render
+content on the page after it has loaded. It has been established over time
+that at Google executes some JavaScript but to what extent is
+[vaguely documented](https://googlewebmastercentral.blogspot.com/2014/05/understanding-web-pages-better.html),
+changes over time, does not apply to other search engines and _cannot reliably
+guide SEO development best-practices_.
+
+It is generally accepted that Google **does not** execute AJAX requests, but
+their WebMaster tools can  give you a pretty good idea of what is and isn't
+being executed and rendered for a specific page.
+
+When using a dynamic web server, the best approach is to detect if the site is
+is being crawled by a search engine and serve the appropriate page content.
+Any additional content that is not part of SEO may then be loaded and rendered
+in whatever form best serves the user experience.
+
+When using a static web server, the best approach is to generate static versions
+of every page for the search engines to index but include a script that
+will redirect browsers to appropriate SPA route.
+
+E.g.
+
+```html
+<!-- Before: http://www.domain.tld/page-route -->
+<script>window.location="/#"+location.pathname</script>
+<!-- Before: http://www.domain.tld/#/page-route -->
+```
+
+<!-- TODO: Verify that this actually works using Webmaster Tools -->
+
+In both cases, if content needs to be indexed that is rendered in the browser
+using JavaScript, an isomorphic library such as React or headless browser such
+at PhantomJS may be used to pre-render pages. In the case of the latter
+technique, there are SaaS available.
 
 ## What is the extent of your experience with Promises and/or their polyfills? 😕
 
