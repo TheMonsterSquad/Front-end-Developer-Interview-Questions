@@ -317,9 +317,7 @@ Short answer by [Matthew Zhong](https://flowerszhong.github.io/2013/11/20/javasc
 
 Detailed answer from [Lucy Bain](http://lucybain.com/blog/2014/host-vs-native/).
 
-## Difference between: -
-
-`function Person(){}`, `var person = Person()`, and `var person = new Person()`?
+## Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`? 😎
 
 `function Person(){} `defines a function. The
   capital letter at the beginning of the function name indicates
