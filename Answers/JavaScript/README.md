@@ -710,7 +710,7 @@ tool will demonstrate what is and isn't being executed and rendered for a
 specific page.
 Google also recommends workarounds using the [hashbang](https://developers.google.com/webmasters/ajax-crawling/docs/getting-started#2-set-up-your-server-to-handle-requests-for-urls-that-contain-_escaped_fragment_),
 [metatags](https://developers.google.com/webmasters/ajax-crawling/docs/getting-started#3-handle-pages-without-hash-fragments)
-and the [sitemap](https://developers.google.com/webmasters/ajax-crawling/docs/getting-started#4-consider-updating-your-sitemap-to-list-the-new-ajax-urls).
+and  [sitemap](https://developers.google.com/webmasters/ajax-crawling/docs/getting-started#4-consider-updating-your-sitemap-to-list-the-new-ajax-urls).
 
 When using a dynamic web server, the best approach is to detect if the site is
 is being crawled by a search engine and serve the appropriate page content.
