@@ -698,14 +698,19 @@ web server behind the scenes.
 
 SPA's suffer from the same issues as any app that uses JavaScript to render
 content on the page after it has loaded. It has been established over time
-that at Google executes some JavaScript but to what extent is
-[vaguely documented](https://googlewebmastercentral.blogspot.com/2014/05/understanding-web-pages-better.html),
+that at [Google executes some JavaScript](http://searchengineland.com/tested-googlebot-crawls-javascript-heres-learned-220157)
+but to what extent
+[is vaguely documented](https://googlewebmastercentral.blogspot.com/2014/05/understanding-web-pages-better.html),
 changes over time, does not apply to other search engines and _cannot reliably
 guide SEO development best-practices_.
 
-It is generally accepted that Google **does not** execute AJAX requests, but
-their WebMaster tools can  give you a pretty good idea of what is and isn't
-being executed and rendered for a specific page.
+It is generally accepted that Google **does not** [execute AJAX requests](https://builtvisible.com/javascript-framework-seo/),
+but their WebMaster [Fetch as Google](https://www.google.com/webmasters/tools/googlebot-fetch)
+tool will demonstrate what is and isn't being executed and rendered for a
+specific page.
+Google also recommends workarounds using the [hashbang](https://developers.google.com/webmasters/ajax-crawling/docs/getting-started#2-set-up-your-server-to-handle-requests-for-urls-that-contain-_escaped_fragment_),
+[metatags](https://developers.google.com/webmasters/ajax-crawling/docs/getting-started#3-handle-pages-without-hash-fragments)
+and the [sitemap](https://developers.google.com/webmasters/ajax-crawling/docs/getting-started#4-consider-updating-your-sitemap-to-list-the-new-ajax-urls).
 
 When using a dynamic web server, the best approach is to detect if the site is
 is being crawled by a search engine and serve the appropriate page content.
