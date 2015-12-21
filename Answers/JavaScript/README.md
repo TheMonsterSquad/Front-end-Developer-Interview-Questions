@@ -637,13 +637,16 @@ More solutions on [GitHub](https://gist.github.com/jaysonrowe/1592432#gistcommen
 
 Reasons:
 
-*    It’s harder to read the code and reason about it when variables seem to
+*   It’s harder to read the code and reason about it when variables seem to
 appear out of thin air (but really from the global scope).
-*    Anyone can update a global variable from any point in the program at any
+
+*   Anyone can update a global variable from any point in the program at any
 time (and from any thread if there’s more than one going).
-*    General code smell - if you're too lazy to put the variable only where it
+
+*   General code smell - if you're too lazy to put the variable only where it
 needs to be then what other corners are you cutting?
-*    It’s probable that you'll encounter global variable name clashes. Since
+
+*   It’s probable that you'll encounter global variable name clashes. Since
 there’s only one namespace you're more likely to double up on a variable name.
 
 **Bonus Points** variable declarations default to the global scope if the `var`
@@ -733,13 +736,22 @@ technique, there are SaaS available.
 Looking for mention of:
 
 *   [es6-promise](https://github.com/jakearchibald/es6-promise) and/or [RSVP](https://github.com/tildeio/rsvp.js/)
-*   [Bluebird](https://github.com/petkaantonov/bluebird), [Q](https://github.com/kriskowal/q) or [when](https://github.com/cujojs/when)
-*   [jQuery.Deferred](https://api.jquery.com/jQuery.Deferred/)
-*   [Promisify](https://github.com/digitaldesignlabs/es6-promisify)-ing an [errback](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/)
-*   Any API that supports Promises E.g. [AngularJS $q](https://docs.angularjs.org/api/ng/service/$q), [PouchDB](http://pouchdb.com/api.html#overview), [Parse Data](https://www.parse.com/docs/js/guide#promises)
 
-**Bonue Points** for mention of [Promises/A+](https://promisesaplus.com/) spec
-and how [jQuery versions](http://stackoverflow.com/a/23958233) meet it.
+*   [Bluebird](https://github.com/petkaantonov/bluebird), [Q](https://github.com/kriskowal/q) or [when](https://github.com/cujojs/when)
+
+*   [jQuery.Deferred](https://api.jquery.com/jQuery.Deferred/)
+
+*   [Promisify](https://github.com/digitaldesignlabs/es6-promisify)-ing an
+ [errback](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/)
+
+*   Any API that supports Promises:
+
+    *   [AngularJS $q](https://docs.angularjs.org/api/ng/service/$q)
+    *   [PouchDB](http://pouchdb.com/api.html#overview)
+    *   [Parse Data](https://www.parse.com/docs/js/guide#promises)
+
+**Bonue Points** for mention of the [Promises/A+](https://promisesaplus.com/)
+spec and how [jQuery versions](http://stackoverflow.com/a/23958233) meet it.
 
 Comparisons:
 
