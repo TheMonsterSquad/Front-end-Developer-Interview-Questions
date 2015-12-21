@@ -718,7 +718,7 @@ E.g.
 ```html
 <!-- Before: http://www.domain.tld/page-route -->
 <script>window.location="/#"+location.pathname</script>
-<!-- Before: http://www.domain.tld/#/page-route -->
+<!-- After: http://www.domain.tld/#/page-route -->
 ```
 
 <!-- TODO: Verify that this actually works using Webmaster Tools -->
