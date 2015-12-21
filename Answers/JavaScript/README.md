@@ -750,7 +750,7 @@ Looking for mention of:
     *   [PouchDB](http://pouchdb.com/api.html#overview)
     *   [Parse Data](https://www.parse.com/docs/js/guide#promises)
 
-**Bonue Points** for mention of the [Promises/A+](https://promisesaplus.com/)
+**Bonus Points** for mention of the [Promises/A+](https://promisesaplus.com/)
 spec and how [jQuery versions](http://stackoverflow.com/a/23958233) meet it.
 
 Comparisons:
