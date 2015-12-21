@@ -407,7 +407,7 @@ you're probably ok.
 
 Points for naming [any browser feature](https://developer.mozilla.org/en-US/docs/Browser_Feature_Detection).
 
-## Explain AJAX in as much detail as possible. 😕
+## Explain AJAX in as much detail as possible. 😎
 
 *   Stands for (**A**)synchronous (**J**)avaScript (**a**)nd (**X**)ML
 
