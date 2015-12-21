@@ -727,9 +727,12 @@ E.g.
 <!-- TODO: Verify that this actually works using Webmaster Tools -->
 
 In both cases, if content needs to be indexed that is rendered in the browser
-using JavaScript, an isomorphic library such as React or headless browser such
-at PhantomJS may be used to pre-render pages. In the case of the latter
-technique, there are SaaS available.
+using JavaScript, an
+[isomorphic library such as React](https://strongloop.com/strongblog/node-js-react-isomorphic-javascript-why-it-matters/)
+or headless browser such as
+[PhantomJS](http://phantomjs.org/)
+may be used to pre-render pages.
+In the case of the latter technique, there are [SaaS available](https://prerender.io/).
 
 ## What is the extent of your experience with Promises and/or their polyfills? 😎
 
