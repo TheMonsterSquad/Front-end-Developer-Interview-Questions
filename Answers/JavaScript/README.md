@@ -321,9 +321,9 @@ Detailed answer from [Lucy Bain](http://lucybain.com/blog/2014/host-vs-native/).
 
 `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 
-`function Person(){} `defines a function. Since it’s got a
-  capital letter at the beginning of the function name we
-  expect that it’s a constructor.
+`function Person(){} `defines a function. The
+  capital letter at the beginning of the function name indicates
+  that it’s a constructor.
 
 `var person = new Person()` is one way to create new objects.
 Using this method person will have access to everything
