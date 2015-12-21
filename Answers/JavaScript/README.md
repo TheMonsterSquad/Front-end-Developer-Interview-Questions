@@ -728,9 +728,42 @@ using JavaScript, an isomorphic library such as React or headless browser such
 at PhantomJS may be used to pre-render pages. In the case of the latter
 technique, there are SaaS available.
 
-## What is the extent of your experience with Promises and/or their polyfills? 😕
+## What is the extent of your experience with Promises and/or their polyfills? 😎
 
-## What are the pros and cons of using Promises instead of callbacks? 😕
+Looking for mention of:
+
+*   [es6-promise](https://github.com/jakearchibald/es6-promise) and/or [RSVP](https://github.com/tildeio/rsvp.js/)
+*   [Bluebird](https://github.com/petkaantonov/bluebird), [Q](https://github.com/kriskowal/q) or [when](https://github.com/cujojs/when)
+*   [jQuery.Deferred](https://api.jquery.com/jQuery.Deferred/)
+*   [Promisify](https://github.com/digitaldesignlabs/es6-promisify)-ing an [errback](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/)
+*   Any API that supports Promises E.g. [AngularJS $q](https://docs.angularjs.org/api/ng/service/$q), [PouchDB](http://pouchdb.com/api.html#overview), [Parse Data](https://www.parse.com/docs/js/guide#promises)
+
+**Bonue Points** for mention of [Promises/A+](https://promisesaplus.com/) spec
+and how [jQuery versions](http://stackoverflow.com/a/23958233) meet it.
+
+Comparisons:
+
+*   [Stack Overflow](https://stackoverflow.com/questions/23403814/how-do-promises-a-implementations-vary)
+*   [Complexity Maze](http://complexitymaze.com/2014/03/03/javascript-promises-a-comparison-of-libraries/)
+*   [Bluebird - Benchmarks](http://bluebirdjs.com/docs/benchmarks.html)
+
+## What are the pros and cons of using Promises instead of callbacks? 😎
+
+### Pros
+
+**References**
+
+*   [Why Promises?](http://bluebirdjs.com/docs/why-promises.html)
+*   [What’s so great about JavaScript Promises?](http://blog.parse.com/learn/engineering/whats-so-great-about-javascript-promises/)
+*   [Why I am switching to promises](https://spion.github.io/posts/why-i-am-switching-to-promises.html)
+
+### Cons
+
+**References**
+
+*   [We have a problem with promises](http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
+*   [Callback Hell is a Myth](http://thecodebarbarian.com/2015/03/20/callback-hell-is-a-myth)
+*   [Node.js® Reactions](http://nodejsreactions.tumblr.com/post/124844509586/promises-can-save-you-from-callback-hell)
 
 ## What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript? 😕
 
