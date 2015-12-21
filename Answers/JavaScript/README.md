@@ -321,6 +321,21 @@ Detailed answer from [Lucy Bain](http://lucybain.com/blog/2014/host-vs-native/).
 
 `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 
+`function Person(){} `defines a function. Since it’s got a
+  capital letter at the beginning of the function name we
+  expect that it’s a constructor.
+
+`var person = new Person()` is one way to create new objects.
+Using this method person will have access to everything
+`Person.prototype` has access to, as well as any instance
+variables set in the `Person` constructor.
+
+`var person = Person()` is a mistake. There are ways of
+dealing with mistakes like this (my preference is the
+`'use strict'` method), but ultimately this should be corrected.
+
+Detailed answer from [Lucy Bain](http://lucybain.com/blog/2015/js-new-keyword-and-functions/).
+
 ## What's the difference between `.call` and `.apply`? 😎
 
 The main difference is that apply lets you invoke the function with arguments
