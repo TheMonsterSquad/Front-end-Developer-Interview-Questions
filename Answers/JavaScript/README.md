@@ -253,54 +253,42 @@ paths that look like [`../../../../../../..`](https://github.com/substack/browse
 
 ```bash
 .
-├── index.html
-├── index.js
-├── index.css
-│
 ├── pages
 │   │
+|   ├── index.html
+|   ├── index.css
+|   ├── index.js
+|   ├── ...
+│   │
 │   ├── page-one
-│   │   |
-│   │   ├── index.html
-│   │   ├── index.js
-│   │   └── index.css
+|   |   ├── index.html
+│   │   └── ...
 │   │
 │   └── page-two
-│       |
-│       ├── index.html
-│       ├── index.js
-│       └── index.css
+│       └── ...
 │
 ├── modules
 │   │
 │   ├── header
 │   │   |
-│   │   ├── index.html
+│   │   ├── index.tmpl
+│   │   ├── index.css
 │   │   ├── index.js
-│   │   └── index.css
+│   │   └── ...
 │   │
 │   └── footer
-│       |
-│       ├── index.html
-│       ├── index.js
-│       └── index.css
+│       └── ...
 │
 └── components
     │
     ├── button
-    │   |
-    │   ├── index.html
-    │   ├── index.js
-    │   └── index.css
+    │   └── ...
     │
     └── input
-        |
-        ├── index.html
-        ├── index.js
-        └── index.css
+        └── ...
 ```
 
-## What's the difference between host objects and native objects? 😎�
+## What's the difference between host objects and native objects? 😎
 
 **Native** objects are those supplied by JavaScript.
 Examples of these are String, Number, Array, Image, Date, Math, etc.
@@ -419,13 +407,13 @@ Detailed answer from [Lucy Bain](http://lucybain.com/blog/2015/js-how-does-ajax-
 
 ## Explain how JSONP works (and how it's not really AJAX). 😎
 
-[How JSONP works](http://lucybain.com/blog/2015/how-does-jsonp-work/).
-
-How JSONP is different from AJAX::
+How JSONP is different from AJAX:
 
 *   Can only work with a JSONP enabled server API
 *   Can only use the HTTP `GET` method
 *   _Can make cross domain requests_
+
+Detailed answer from [Lucy Bain](http://lucybain.com/blog/2015/js-how-does-jsonp-work/).
 
 ## Have you ever used JavaScript templating? 😎
 
@@ -497,9 +485,27 @@ value of `my-class`.
 So Attributes are in your HTML text document/file, whereas properties are in
 HTML DOM tree.
 
-## Why is extending built-in JavaScript objects not a good idea? 😕
+## Why is extending built-in JavaScript objects not a good idea? 😎
+
+Extending native built-ins with custom methods immediately
+makes "collision" problem apparent.
+It violates "[don't modify objects you don't own](http://www.nczonline.net/blog/2010/03/02/maintainable-javascript-dont-modify-objects-you-down-own/)"
+principle, and makes code not future-proof.
+
+[Source](http://perfectionkills.com/extending-native-builtins/)
+
+Detailed answer from [Lucy Bain](http://lucybain.com/blog/2014/js-extending-built-in-objects/).
 
 ## Difference between document load event and document ready event? 😎
+
+The **Ready** event occurs when the DOM is ready. _This is a jQuery event_.
+
+The **Load** event occurs when the page fully loaded. This includes inner
+frames, images etc.
+
+Short answer from [Matthew Zhong](https://flowerszhong.github.io/2013/11/20/javascript-questions.html).
+
+Detailed answer from [Lucy Bain](http://lucybain.com/blog/2014/js-document-load-vs-ready/).
 
 The `ready` event occurs after the HTML document has been loaded, while the
 `onload` event occurs later, when all content (e.g. images) also has
@@ -511,21 +517,108 @@ occur as early as possible after the document has loaded, so that code that
 adds functionality to the elements in the page doesn’t have to wait for all
 content to load.
 
-## What is the difference between `==` and `===`? 😕
+## What is the difference between `==` and `===`? 😎
 
-## Explain the same-origin policy with regards to JavaScript. 😕
+The `==` operator will compare for equality after doing any
+necessary type conversions. The `===` operator will not do the
+conversion, so if two values are not the same type `===` will
+simply return false. It's this case where `===` will be faster,
+and may return a different result than `==.` In all other cases
+performance will be the same.
 
-## Make this work: -
+Short answer from [Matthew Zhong](https://flowerszhong.github.io/2013/11/20/javascript-questions.html).
+
+Detailed answer from [Lucy Bain](http://lucybain.com/blog/2014/triple-vs-double-equals/).
+
+## Explain the same-origin policy with regards to JavaScript. 😎
+
+Prevent malicious attacks by stopping code from another site
+executing on your site. An attacks like this is known as a
+[Cross Site Scripting](https://en.wikipedia.org/wiki/Cross-site_scripting)
+attack.
+
+JavaScript will only execute if it is hosted from the same
+subdomain, domain and port using the same protocol as the
+document it is being loaded from.
+
+Answer from [Lucy Bain](http://lucybain.com/blog/2014/same-origin-policy/).
+
+## Make this work: `duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]`
 
 ```javascript
-duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
+duplicate(input) {
+  return input.concat(input);
+}
 ```
 
-## Why is it called a Ternary expression, what does the word "Ternary" indicate? 😕
+## Why is it called a Ternary expression, what does the word "Ternary" indicate? 😎
 
-## What is `"use strict";`? what are the advantages and disadvantages to using it? 😕
+A unary operand accepts one parameter, e.g. `-1`, where `-` is the operand,
+and `1` is the parameter.
 
-## Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`. 😕
+A binary operand accepts two parameters, e.g. `2 + 3`, where `+` is the operand,
+and `2` and `3` are the parameters.
+
+A ternary operand accepts three parameters:
+
+```javascript
+conditional ? truthy_block : falsy_block
+```
+
+In JS, ternarys are often used for assignment:
+
+```javascript
+const isAlwaysSunny = isPhiladelphia ? true : false;
+```
+
+Answer from [Lucy Bain](http://lucybain.com/blog/2014/js-ternary/)
+
+## What is `"use strict";`? what are the advantages and disadvantages to using it? 😎
+
+Strict mode throws more errors and disables some features in an effort to make
+your code more robust, readable, and accurate.
+
+Advantages:
+
+*   It catches some common coding bloopers, throwing exceptions.
+
+*   It prevents, or throws errors, when relatively “unsafe” actions are taken
+(such as gaining access to the global object).
+
+*   It disables features that are confusing or poorly thought out.
+
+Disadvantages:
+
+*   Confuses developers who don't use it...
+
+Answer from [Lucy Bain](http://lucybain.com/blog/2014/js-use-strict/)
+
+## Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`. 😎
+
+```javascript
+for (var i = 1; i <= 100; i++) {
+  if (i % 15 === 0) {
+    console.log('FizzBuzz');
+  } else if (i % 3 === 0) {
+    console.log('Fizz');
+  } else if (i % 5 === 0) {
+    console.log('Buzz');
+  } else {
+    console.log(i);
+  }
+}
+```
+
+[Source](http://www.ineverylang.com/fizz-buzz/javascript/)
+
+```javascript
+for (var i = 1; i <= 100; i++) {
+  var f = i % 3 == 0, b = i % 5 == 0;
+  console.log(f ? b ? "FizzBuzz" : "Fizz" : b ? "Buzz" : i);
+}
+```
+
+More solutions on [GitHub](https://gist.github.com/jaysonrowe/1592432#gistcomment-790724)
 
 ## Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it? 😕
 
