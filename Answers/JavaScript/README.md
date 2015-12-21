@@ -556,7 +556,7 @@ document it is being loaded from.
 
 Answer from [Lucy Bain](http://lucybain.com/blog/2014/same-origin-policy/).
 
-## Make this work: `duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]`
+## Make this work: `duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]`. 😎
 
 ```javascript
 duplicate(input) {
