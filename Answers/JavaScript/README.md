@@ -954,7 +954,7 @@ An **immutable** object _cannot_ be modified after it is created.
 
 The [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) object [is immutable](http://stackoverflow.com/a/51193).
 
-### What are the pros and cons of immutability? 😕
+### What are the pros and cons of immutability? 😎
 
 **Pros**
 
