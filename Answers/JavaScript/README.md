@@ -743,7 +743,7 @@ In the case of the latter technique, there are [SaaS available](https://prerende
 
 Looking for mention of:
 
-*   [es6-promise](https://github.com/jakearchibald/es6-promise) and/or [RSVP](https://github.com/tildeio/rsvp.js/)
+*   [es6-promise](https://github.com/jakearchibald/es6-promise), [RSVP](https://github.com/tildeio/rsvp.js/) or [Lie](https://github.com/calvinmetcalf/lie)
 
 *   [Bluebird](https://github.com/petkaantonov/bluebird), [Q](https://github.com/kriskowal/q) or [when](https://github.com/cujojs/when)
 
@@ -757,6 +757,7 @@ Looking for mention of:
     *   [AngularJS $q](https://docs.angularjs.org/api/ng/service/$q)
     *   [PouchDB](http://pouchdb.com/api.html#overview)
     *   [Parse Data](https://www.parse.com/docs/js/guide#promises)
+    *   [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API#Service_worker_concepts_and_usage)
 
 **Bonus Points** for mention of the [Promises/A+](https://promisesaplus.com/)
 spec and how [jQuery versions](http://stackoverflow.com/a/23958233) meet it.
@@ -771,13 +772,37 @@ Comparisons:
 
 ### Pros
 
+*   Allow asynchronous operations to be synchronously operated with
+
+*   Enforce standard interface for success & failure callbacks
+
+*   Are only resolved once
+
+*   Can throw and "bubble" exceptions for better error handling
+
+*   Avoid the "[pyramid of doom](https://en.wikipedia.org/wiki/Pyramid_of_doom_(programming))"
+caused by nesting callbacks
+
+*   Make code more flexible
+
+*   Make code more readable
+
+*   Make control flow more understandable
+
 **References**
 
+*   [Aren't promises just callbacks?](http://stackoverflow.com/a/22540276)
 *   [Why Promises?](http://bluebirdjs.com/docs/why-promises.html)
-*   [What’s so great about JavaScript Promises?](http://blog.parse.com/learn/engineering/whats-so-great-about-javascript-promises/)
 *   [Why I am switching to promises](https://spion.github.io/posts/why-i-am-switching-to-promises.html)
 
 ### Cons
+
+*   Use more code
+*   Add unnecessary abstraction
+*   Lead to a regression to callbacks where deeper understanding is required
+*   Are confusing when used in combination with callbacks
+*   Introduce unexpected code styles and behavior when used incorrectly
+*   Are a stopgap until `async/await` become widely adopted
 
 **References**
 
