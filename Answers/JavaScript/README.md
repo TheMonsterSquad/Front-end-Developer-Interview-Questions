@@ -869,25 +869,37 @@ Looking for mentions of:
 ### Logging
 
 *   To local file
+
+    *   [debug](https://github.com/visionmedia/debug)
+    *   [minilog](http://mixu.net/minilog/)
+
 *   To remote service
+
+    *   [Splunk](http://www.splunk.com/en_us/solutions/solution-areas/log-management.html)
+    *   [Loggly](https://www.loggly.com/)
+    *   [Papertrail](https://papertrailapp.com/)
+    *   [LogEntries](https://logentries.com/)
 
 ### X-Device
 
-  *   [BrowserStack](https://www.browserstack.com/)
-  *   [Xcode iOS Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
-  *   [Remote debug iOS with Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html#//apple_ref/doc/uid/TP40007874-CH2-SW8)
-  *   [Remote debug Android with Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging)
-  *   [Internet Explorer VM's](https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/)  
+*   [BrowserStack](https://www.browserstack.com/)
+*   [Xcode iOS Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
+*   [Remote debug iOS with Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html#//apple_ref/doc/uid/TP40007874-CH2-SW8)
+*   [Remote debug Android with Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging)
+*   [Internet Explorer VM's](https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/)  
 
 ### **Bonus Points**
 
-*   [Debug](https://github.com/visionmedia/debug)
 *   [DevTools Addons](https://github.com/paulirish/devtools-addons/wiki)
 *   [Deb.js](https://github.com/krasimir/deb.js)
 *   [Vorlon.js](http://www.vorlonjs.com/)
 *   [Iron Node](https://s-a.github.io/iron-node/)
 
 ## What language constructions do you use for iterating over object properties and array items? 😎
+
+Looking for mentions of:
+
+*    [Array.prototype.map]
 
 ```javascript
 
