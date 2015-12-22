@@ -899,21 +899,49 @@ Looking for mentions of:
 
 ## What language constructions do you use for iterating over object properties and array items? 😎
 
-Looking for mentions of:
+In the case of an **Array**,
+the [`for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+statement loop with length caching is fastest, as demonstrated in benchmarks
+against other statements such as [`while`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+and [`do...while`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)
+and methods such as [`Array.prototype.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+and [`Array.prototype.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
 
-*    [Array.prototype.map]
+References:
 
-```javascript
+*   [What's the fastest way to loop through an array in JavaScript?](http://stackoverflow.com/a/7252102)
+*   [Iterate Array](https://jsperf.com/iterate-array)
+*   [Caching Array Length](https://jsperf.com/caching-array-length/75)
+*   [map vs forEach](https://jsperf.com/map-vs-foreach-on-so/5)
 
-var input = { foo: 'bar', baz: 'foo' };
+**Bonus Points**
 
-Object.keys(input)
-  .map(key => input[key]) // ['bar', 'foo']
-  .reduce((output, val) => {
-    output[val] = true;
-    return output;
-  }, {}); // { bar: true, foo: true }
-```
+*   [Best way to iterate over an array without blocking the UI](http://stackoverflow.com/a/10344560)
+*   [Performing computations in the background](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers#Performing_computations_in_the_background)
+*   [Data Structures](https://github.com/montagejs/collections) and [Search Algorithms](https://github.com/felipernb/algorithms.js)
+*   [Loop unrolling](https://jsperf.com/duffs-device/47)
+*   [what use does the javascript forEach method have (that map can't do)?](http://stackoverflow.com/a/3034430) _spoiler: `map` returns a new array_
+*   [Reusing Array References](http://moduscreate.com/javascript-performance-tips-tricks/)
+*   [Differences between lodash and underscore](http://stackoverflow.com/a/13898916)
+
+In the case of an **Object**,
+the [`Object.keys()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys),
+combined with the [`for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+statement loop with length caching, is faster than
+[`for...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+and doesn't require conditional logic.
+
+References:
+
+*   [Loop through JavaScript object](http://stackoverflow.com/a/684692)
+*   [Traverse object properties](https://jsperf.com/traverse-object-properties)
+*   [Iterate Dictionary](https://jsperf.com/iterate-dictionary)
+*   [Iterate Object](https://jsperf.com/iterate-object)
+
+**Bonus Points**
+
+*   [Iterators and Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators)
+*   [Traverse all the Nodes of a JSON Object Tree with JavaScript](http://stackoverflow.com/a/722732)
 
 ## Explain the difference between mutable and immutable objects. 😕
 
