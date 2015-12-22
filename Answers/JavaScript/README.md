@@ -987,7 +987,7 @@ _References_
 
 ### How can you achieve immutability in your own code? 😎
 
-1.  Use
+1 -  Use
 [`Object.freeze()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze),
 [`Object.assign()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 and [`Array.prototype.slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
@@ -1011,8 +1011,8 @@ const arrB = arrA.slice();
 > View the [example code](Examples/Immutable-Data.js)
 > or an [interactive demo](http://jsbin.com/seterikuge/1/edit?js,console).
 
-2.  Creating objects with [`Object.defineProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
-3.  Use [Seamless Immutable](https://github.com/rtfeldman/seamless-immutable).
+2 -  Creating objects with [`Object.defineProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+3 -  Use [Seamless Immutable](https://github.com/rtfeldman/seamless-immutable).
 
 ## Explain the difference between synchronous and asynchronous functions. 😕
 
