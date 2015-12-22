@@ -593,7 +593,7 @@ Answer from [Lucy Bain](http://lucybain.com/blog/2014/js-ternary/)
 Strict mode throws more errors and disables some features in an effort to make
 your code more robust, readable, and accurate.
 
-Advantages:
+**Advantages**
 
 *   It catches some common coding bloopers, throwing exceptions.
 
@@ -602,7 +602,7 @@ Advantages:
 
 *   It disables features that are confusing or poorly thought out.
 
-Disadvantages:
+**Disadvantages**
 
 *   Confuses developers who don't use it...
 
@@ -764,7 +764,7 @@ Looking for mention of:
 **Bonus Points** for mention of the [Promises/A+](https://promisesaplus.com/)
 spec and how [jQuery versions](http://stackoverflow.com/a/23958233) meet it.
 
-Comparisons:
+**Comparisons**
 
 *   [Stack Overflow](https://stackoverflow.com/questions/23403814/how-do-promises-a-implementations-vary)
 *   [Complexity Maze](http://complexitymaze.com/2014/03/03/javascript-promises-a-comparison-of-libraries/)
@@ -772,7 +772,7 @@ Comparisons:
 
 ## What are the pros and cons of using Promises instead of callbacks? 😎
 
-### Pros
+**Pros**
 
 *   Allow asynchronous operations to be synchronously operated with
 
@@ -791,13 +791,13 @@ caused by nesting callbacks
 
 *   Make control flow more understandable
 
-**References**
+_References_
 
 *   [Aren't promises just callbacks?](http://stackoverflow.com/a/22540276)
 *   [Why Promises?](http://bluebirdjs.com/docs/why-promises.html)
 *   [Why I am switching to promises](https://spion.github.io/posts/why-i-am-switching-to-promises.html)
 
-### Cons
+**Cons**
 
 *   Use more code
 *   Add unnecessary abstraction
@@ -806,7 +806,7 @@ caused by nesting callbacks
 *   Introduce unexpected code styles and behavior when used incorrectly
 *   Are a stopgap until `async/await` become widely adopted
 
-**References**
+_References_
 
 *   [We have a problem with promises](http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
 *   [Callback Hell is a Myth](http://thecodebarbarian.com/2015/03/20/callback-hell-is-a-myth)
@@ -814,7 +814,7 @@ caused by nesting callbacks
 
 ## What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript? 😎
 
-### Advantages
+**Advantages**
 
 *   Output is more consistent
 *   Productivity is increased
@@ -822,7 +822,7 @@ caused by nesting callbacks
 *   Allows use of language features that are not yet available
 *   Language constructs to enhance performance and debugging
 
-### Disadvantages
+**Disadvantages**
 
 *   Are a stopgap until native features become widely adopted
 *   Requires special tooling to compile and debug
@@ -838,37 +838,37 @@ caused by nesting callbacks
 
 Looking for mentions of:
 
-### Practices
+**Practices**
 
 *   Rubber ducking
 *   Pair programming
 
-### Resources
+**Resources**
 
 *   Stack Overflow
 *   GitHub Issues
 *   Gitter
 *   IRC
 
-### DevTools
+**DevTools**
 
 *   console
 *   breakpoints
 *   profiling
 *   fps
 
-### Performance
+**Performance**
 
 *   WebPagetest
 *   PageSpeed
 
-### Network
+**Network**
 
 *   Charles
 *   Postman
 *   curl
 
-### Logging
+**Logging**
 
 *   To local file
 
@@ -882,14 +882,14 @@ Looking for mentions of:
     *   [Papertrail](https://papertrailapp.com/)
     *   [LogEntries](https://logentries.com/)
 
-### X-Device
+**X-Device**
 
 *   [BrowserStack](https://www.browserstack.com/) or [Testling](https://ci.testling.com/)
 *   [Xcode iOS Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
 *   Remote debug [iOS with Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html#//apple_ref/doc/uid/TP40007874-CH2-SW8) and [Android with Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging)
 *   [Internet Explorer VM's](https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/)  
 
-### **Bonus Points**
+**Bonus Points**
 
 *   [DevTools Addons](https://github.com/paulirish/devtools-addons/wiki)
 *   [Log](https://github.com/adamschwartz/log)
@@ -907,7 +907,7 @@ and [`do...while`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 and methods such as [`Array.prototype.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 and [`Array.prototype.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
 
-References:
+_References_
 
 *   [What's the fastest way to loop through an array in JavaScript?](http://stackoverflow.com/a/7252102)
 *   [Iterate Array](https://jsperf.com/iterate-array)
@@ -931,7 +931,7 @@ statement loop with length caching, is faster than
 [`for...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 and doesn't require conditional logic.
 
-References:
+_References_
 
 *   [Loop through JavaScript object](http://stackoverflow.com/a/684692)
 *   [Traverse object properties](https://jsperf.com/traverse-object-properties)
@@ -943,13 +943,76 @@ References:
 *   [Iterators and Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators)
 *   [Traverse all the Nodes of a JSON Object Tree with JavaScript](http://stackoverflow.com/a/722732)
 
-## Explain the difference between mutable and immutable objects. 😕
+## Explain the difference between mutable and immutable objects. 😎
 
-### What is an example of an immutable object in JavaScript? 😕
+A **mutable** object can be modified after it is created.
+An **immutable** object _cannot_ be modified after it is created.
+
+[Wikipedia](https://en.wikipedia.org/wiki/Immutable_object)
+
+### What is an example of an immutable object in JavaScript? 😎
+
+The [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) object [is immutable](http://stackoverflow.com/a/51193).
 
 ### What are the pros and cons of immutability? 😕
 
-### How can you achieve immutability in your own code? 😕
+**Pros**
+
+*   Immutable objects are simpler to construct, test, and use
+*   Truly immutable objects are always thread-safe
+*   They help to avoid temporal coupling
+*   Their usage is side-effect free (no defensive copies)
+*   Identity mutability problem is avoided
+*   They always have failure atomicity
+*   They are much easier to cache
+*   They prevent NULL references, which are bad
+*   They make changes in application state easier to reason about
+*   They make the flow of data easier to follow
+
+_References_
+
+*   [Objects Should Be Immutable](http://www.yegor256.com/2014/06/09/objects-should-be-immutable.html)
+*   [The case for immutability]((https://github.com/facebook/immutable-js/#the-case-for-immutability)
+
+**Cons**
+
+*   Not for enterprise systems
+*   Cheaper to update an existing object than create a new one
+*   Decreased performance
+
+_References_
+
+*   [Arguments against immutability](http://www.yegor256.com/2014/06/09/objects-should-be-immutable.html#arguments-against-immutability)
+*   [Mutable vs immutable](https://jsperf.com/mutable-vs-immutable)
+
+### How can you achieve immutability in your own code? 😎
+
+1.  Use
+[`Object.freeze()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze),
+[`Object.assign()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+and [`Array.prototype.slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+to make copies of your data
+
+```javascript
+
+// Object
+const objA = Object.freeze({
+  foo: 'bar'
+});
+const objB = Object.assign({}, objA);
+
+// Array
+const arrA = Object.freeze([
+  objA.foo
+]);
+const arrB = arrA.slice();
+```
+
+> View the [example code](Examples/Immutable-Data.js)
+> or an [interactive demo](http://jsbin.com/seterikuge/1/edit?js,console).
+
+2.  Creating objects with [`Object.defineProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+3.  Use [Seamless Immutable](https://github.com/rtfeldman/seamless-immutable).
 
 ## Explain the difference between synchronous and asynchronous functions. 😕
 
