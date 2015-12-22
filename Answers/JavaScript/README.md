@@ -887,7 +887,19 @@ Looking for mentions of:
 *   [Vorlon.js](http://www.vorlonjs.com/)
 *   [Iron Node](https://s-a.github.io/iron-node/)
 
-## What language constructions do you use for iterating over object properties and array items? 😕
+## What language constructions do you use for iterating over object properties and array items? 😎
+
+```javascript
+
+var input = { foo: 'bar', baz: 'foo' };
+
+Object.keys(input)
+  .map(key => input[key]) // ['bar', 'foo']
+  .reduce((output, val) => {
+    output[val] = true;
+    return output;
+  }, {}); // { bar: true, foo: true }
+```
 
 ## Explain the difference between mutable and immutable objects. 😕
 
