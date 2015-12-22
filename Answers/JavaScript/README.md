@@ -972,7 +972,7 @@ The [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 _References_
 
 *   [Objects Should Be Immutable](http://www.yegor256.com/2014/06/09/objects-should-be-immutable.html)
-*   [The case for immutability]((https://github.com/facebook/immutable-js/#the-case-for-immutability)
+*   [The case for immutability](https://github.com/facebook/immutable-js/#the-case-for-immutability)
 
 **Cons**
 
