@@ -836,56 +836,56 @@ caused by nesting callbacks
 
 Looking for mentions of:
 
-*   Practices
+### Practices
 
-    *   Rubber ducking
-    *   Pair programming
+*   Rubber ducking
+*   Pair programming
 
-*   Resources
+### Resources
 
-    *   Stack Overflow
-    *   GitHub Issues
-    *   Gitter
-    *   IRC
+*   Stack Overflow
+*   GitHub Issues
+*   Gitter
+*   IRC
 
-*   DevTools
+### DevTools
 
-    *   console
-    *   breakpoints
-    *   profiling
-    *   fps
+*   console
+*   breakpoints
+*   profiling
+*   fps
 
-*   Performance
+### Performance
 
-    *   WebPagetest
-    *   PageSpeed
+*   WebPagetest
+*   PageSpeed
 
-*   Network
+### Network
 
-    *   Charles
-    *   Postman
-    *   curl
+*   Charles
+*   Postman
+*   curl
 
-*   Logging
+### Logging
 
-    *   To local file
-    *   To remote service
+*   To local file
+*   To remote service
 
-*   X-Device
+### X-Device
 
-    *   [BrowserStack](https://www.browserstack.com/)
-    *   [Xcode iOS Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
-    *   [Remote debug iOS with Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html#//apple_ref/doc/uid/TP40007874-CH2-SW8)
-    *   [Remote debug Android with Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging)
-    *   [Internet Explorer VM's](https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/)  
+  *   [BrowserStack](https://www.browserstack.com/)
+  *   [Xcode iOS Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
+  *   [Remote debug iOS with Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html#//apple_ref/doc/uid/TP40007874-CH2-SW8)
+  *   [Remote debug Android with Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging)
+  *   [Internet Explorer VM's](https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/)  
 
-*   **Bonus Points**
+### **Bonus Points**
 
-    *   [Debug](https://github.com/visionmedia/debug) or
-    *   [DevTools Addons](https://github.com/paulirish/devtools-addons/wiki)
-    *   [Deb.js](https://github.com/krasimir/deb.js)
-    *   [Vorlon.js](http://www.vorlonjs.com/)
-    *   [Iron Node](https://s-a.github.io/iron-node/)
+*   [Debug](https://github.com/visionmedia/debug)
+*   [DevTools Addons](https://github.com/paulirish/devtools-addons/wiki)
+*   [Deb.js](https://github.com/krasimir/deb.js)
+*   [Vorlon.js](http://www.vorlonjs.com/)
+*   [Iron Node](https://s-a.github.io/iron-node/)
 
 ## What language constructions do you use for iterating over object properties and array items? 😕
 
