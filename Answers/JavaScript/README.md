@@ -203,7 +203,7 @@ if (typeof(obj) !== 'undefined') {
 }
 ```
 
-Detailed answer from [Lucy Bain](http://lucybain.com/blog/2014/null-undefined-undeclared/)
+Answer from [Lucy Bain](http://lucybain.com/blog/2014/null-undefined-undeclared/)
 
 ## What is a closure, and how/why would you use one? 😎
 
@@ -226,7 +226,7 @@ Sources:
 Anonymous functions are passed as parameters to other functions to be used as
 callbacks.
 
-Answer by [Lucy Bain](http://lucybain.com/blog/2014/anonymous-functions/).
+Answer from [Lucy Bain](http://lucybain.com/blog/2014/anonymous-functions/).
 
 ## How do you organize your code? (module pattern, classical inheritance? 😎
 
@@ -892,6 +892,7 @@ Looking for mentions of:
 ### **Bonus Points**
 
 *   [DevTools Addons](https://github.com/paulirish/devtools-addons/wiki)
+*   [Log](https://github.com/adamschwartz/log)
 *   [Deb.js](https://github.com/krasimir/deb.js)
 *   [Vorlon.js](http://www.vorlonjs.com/)
 *   [Iron Node](https://s-a.github.io/iron-node/) or [Node Inspector](https://github.com/node-inspector/node-inspector)
