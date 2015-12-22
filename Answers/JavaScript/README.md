@@ -182,26 +182,28 @@ primitive type value.
 ### How would you go about checking for any of these states? 😎
 
 ```javascript
-if (typeof(variable) !== 'undefined') {
+if (typeof(obj) !== 'undefined') {
   console.log('variable is not `undefined`');
-  if (variable === null) {
-    // for declaration & assignment `var variable = null;`
-    console.log('variable is `null`');
+  if (obj === null) {
+    // Declared, assigned `null` - `var obj = null;`
+    console.log('`obj` is `null`');
+  } else {
+    console.log('`obj` is **not** `null`');
   }
 } else {
-  console.log('variable is undefined or undeclared');
+  console.log('`obj` is `undefined` or undeclared');
   try {
-    (variable === undefined);
-    // for declaration `var variable;`
-    console.log('variable is `undefined`');
+    (obj === undefined);
+    // Declared , no assignment - `var obj;`
+    console.log('`obj` is `undefined`');
   } catch(e) {
-    // for no declaration
-    console.log('variable is undeclared');
+    // Not declared
+    console.log('`obj` is undeclared');
   }
 }
 ```
 
-[Source](http://lucybain.com/blog/2014/null-undefined-undeclared/)
+Detailed answer from [Lucy Bain](http://lucybain.com/blog/2014/null-undefined-undeclared/)
 
 ## What is a closure, and how/why would you use one? 😎
 
@@ -349,7 +351,7 @@ theFunction.call(valueForThis, arg1, arg2, …);
 
 ## Explain `Function.prototype.bind`. 😎
 
-Creates a new function that, when called, has its this keyword set to the
+Creates a new function that, when called, has its `this` keyword set to the
 provided value, with a given sequence of arguments preceding any provided
 when the new function is called.
 
@@ -882,10 +884,9 @@ Looking for mentions of:
 
 ### X-Device
 
-*   [BrowserStack](https://www.browserstack.com/)
+*   [BrowserStack](https://www.browserstack.com/) or [Testling](https://ci.testling.com/)
 *   [Xcode iOS Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
-*   [Remote debug iOS with Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html#//apple_ref/doc/uid/TP40007874-CH2-SW8)
-*   [Remote debug Android with Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging)
+*   Remote debug [iOS with Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html#//apple_ref/doc/uid/TP40007874-CH2-SW8) and [Android with Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging)
 *   [Internet Explorer VM's](https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/)  
 
 ### **Bonus Points**
@@ -893,7 +894,7 @@ Looking for mentions of:
 *   [DevTools Addons](https://github.com/paulirish/devtools-addons/wiki)
 *   [Deb.js](https://github.com/krasimir/deb.js)
 *   [Vorlon.js](http://www.vorlonjs.com/)
-*   [Iron Node](https://s-a.github.io/iron-node/)
+*   [Iron Node](https://s-a.github.io/iron-node/) or [Node Inspector](https://github.com/node-inspector/node-inspector)
 
 ## What language constructions do you use for iterating over object properties and array items? 😎
 
