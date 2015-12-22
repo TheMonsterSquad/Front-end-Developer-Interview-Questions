@@ -810,9 +810,82 @@ caused by nesting callbacks
 *   [Callback Hell is a Myth](http://thecodebarbarian.com/2015/03/20/callback-hell-is-a-myth)
 *   [Node.js® Reactions](http://nodejsreactions.tumblr.com/post/124844509586/promises-can-save-you-from-callback-hell)
 
-## What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript? 😕
+## What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript? 😎
 
-## What tools and techniques do you use debugging JavaScript code? 😕
+### Advantages
+
+*   Output is more consistent
+*   Productivity is increased
+*   Code is higher quality
+*   Allows use of language features that are not yet available
+*   Language constructs to enhance performance and debugging
+
+### Disadvantages
+
+*   Are a stopgap until native features become widely adopted
+*   Requires special tooling to compile and debug
+*   Benefits can be reproduced with tooling and native code
+*   Requires 100% buy in from all developers and stakeholders
+*   Reduces size of the developer resource pool
+*   Reduces overall experience of developer team
+*   Increases learning curve for developers
+*   Support is not business critical to language developers
+*   Risk of language being abandoned
+
+## What tools and techniques do you use debugging JavaScript code? 😎
+
+Looking for mentions of:
+
+*   Practices
+
+    *   Rubber ducking
+    *   Pair programming
+
+*   Resources
+
+    *   Stack Overflow
+    *   GitHub Issues
+    *   Gitter
+    *   IRC
+
+*   DevTools
+
+    *   console
+    *   breakpoints
+    *   profiling
+    *   fps
+
+*   Performance
+
+    *   WebPagetest
+    *   PageSpeed
+
+*   Network
+
+    *   Charles
+    *   Postman
+    *   curl
+
+*   Logging
+
+    *   To local file
+    *   To remote service
+
+*   X-Device
+
+    *   [BrowserStack](https://www.browserstack.com/)
+    *   [Xcode iOS Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
+    *   [Remote debug iOS with Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html#//apple_ref/doc/uid/TP40007874-CH2-SW8)
+    *   [Remote debug Android with Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging)
+    *   [Internet Explorer VM's](https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/)  
+
+*   **Bonus Points**
+
+    *   [Debug](https://github.com/visionmedia/debug) or
+    *   [DevTools Addons](https://github.com/paulirish/devtools-addons/wiki)
+    *   [Deb.js](https://github.com/krasimir/deb.js)
+    *   [Vorlon.js](http://www.vorlonjs.com/)
+    *   [Iron Node](https://s-a.github.io/iron-node/)
 
 ## What language constructions do you use for iterating over object properties and array items? 😕
 
