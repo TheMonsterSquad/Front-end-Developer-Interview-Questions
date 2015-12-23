@@ -987,7 +987,7 @@ _References_
 
 ### How can you achieve immutability in your own code? 😎
 
-1 -  Use
+1 - Use
 [`Object.freeze()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze),
 [`Object.assign()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 and [`Array.prototype.slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
@@ -1011,10 +1011,26 @@ const arrB = arrA.slice();
 > View the [example code](Examples/Immutable-Data.js)
 > or an [interactive demo](http://jsbin.com/seterikuge/1/edit?js,console).
 
-2 -  Creating objects with [`Object.defineProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
-3 -  Use [Seamless Immutable](https://github.com/rtfeldman/seamless-immutable).
+2 - Creating objects with [`Object.defineProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+3 - Use [Seamless Immutable](https://github.com/rtfeldman/seamless-immutable).
 
-## Explain the difference between synchronous and asynchronous functions. 😕
+## Explain the difference between synchronous and asynchronous functions. 😎
+
+JavaScript is synchronous and single threaded, so every operation is blocking
+by nature. By using callbacks, JavaScript can be made to work asynchronously.
+
+A **synchronous** function will return immediately.
+
+A **asynchronous** function will accept at least one other function
+(or callback) as an argument that will be invoked when upon completion
+of an asynchronous process. E.g. An `XMLHttpRequest` request. It will not
+block other code from executing and may be monitored for a timeout.
+
+**References**
+
+*   [Callbacks, synchronous and asynchronous](http://blog.ometer.com/2011/07/24/callbacks-synchronous-and-asynchronous/)
+*   [When is JavaScript synchronous?](http://stackoverflow.com/a/2035662)
+*   [Asynchronous request](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#Asynchronous_request)
 
 ## What is event loop? 😕
 
