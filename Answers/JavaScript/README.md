@@ -1032,6 +1032,31 @@ block other code from executing and may be monitored for a timeout.
 *   [When is JavaScript synchronous?](http://stackoverflow.com/a/2035662)
 *   [Asynchronous request](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#Asynchronous_request)
 
-## What is event loop? 😕
+## What is event loop? 😎
 
-### What is the difference between call stack and task queue? 😕
+[TL;DR](http://latentflip.com/loupe/)
+
+The **event loop** is an environment process responsible for moving functions
+used as callbacks with various environment API's
+from the [`Task Queue`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Queue)
+to the [`Call Stack`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Stack)
+when it is empty. By using, async processes will not block the queue.
+
+### What is the difference between call stack and task queue? 😎
+
+The **call stack** is a list of functions that will be executed in order.
+The **task queue** is a list of callback functions that have been invoked
+and will be executed in order if the call stack is empty.
+
+**Bonus Points**
+
+*   [60 fps](https://engineering.gosquared.com/optimising-60fps-everywhere-in-javascript) or
+*   [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+
+**References**
+
+*   [Concurrency model and Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+*   [Understanding the Node.js Event Loop](https://strongloop.com/strongblog/node-js-event-loop/)
+*   [The JavaScript Event Loop](https://thomashunter.name/blog/the-javascript-event-loop-presentation/)
+*   [What the heck is the event loop anyway?](http://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html)
+*   [Events and timing in-depth](http://javascript.info/tutorial/events-and-timing-depth)
