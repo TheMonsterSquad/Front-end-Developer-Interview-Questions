@@ -1021,7 +1021,7 @@ by nature. By using callbacks, JavaScript can be made to work asynchronously.
 
 A **synchronous** function will return immediately.
 
-A **asynchronous** function will accept at least one other function
+An **asynchronous** function will accept at least one other function
 (or callback) as an argument that will be invoked when upon completion
 of an asynchronous process. E.g. An `XMLHttpRequest` request. It will not
 block other code from executing and may be monitored for a timeout.
